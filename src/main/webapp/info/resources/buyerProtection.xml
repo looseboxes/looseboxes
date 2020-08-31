@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <p>
+    If your item hasn't arrived or isn't as described, let the seller know. Most 
+    sellers are happy to quickly resolve issues like these.
+  </p>
+  <p>
+    If after a few days you're not happy with the seller's resolution, we're here 
+    to help. Just go to the <a href="../legal/submitcomplain.jsp">Complaints Center</a> and let us know.
+  </p>
+  <p>
+    We'll review the issue and get back to you within 24 hours. If you haven't 
+    received your item or received something that wasn't as described, ${siteName} 
+    will refund your full purchase price plus original shipping.
+  </p>
+</root>

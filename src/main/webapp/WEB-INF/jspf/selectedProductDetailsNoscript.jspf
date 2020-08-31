@@ -1,0 +1,44 @@
+<%@ page pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="/WEB-INF/tlds/bcsocial" prefix="social"%>
+<div>
+  <social:socialshare  
+  ssItemRecord="${User.selectedItem.record}" 
+  ssLargeIcons="true" 
+  ssOwnerEmail="${User.selectedItem.seller.emailAddress}"/> 
+  &emsp;
+  <%@include file="/WEB-INF/jspf/itemDetailsTopLinks.jspf"%>
+</div>
+<div class="width1 myBorder4">
+  <a name="details"></a>
+  <%@include file="/WEB-INF/jspf/itemDetails.jspf"%>
+</div>
+<c:if test="${not empty User.selectedItem.images}">
+  <br/>
+  <c:forEach varStatus="vs" var="image" items="${User.selectedItem.images}">
+    <div class="width1 myBorder4">
+      <span class="mySmaller">Click on this image to expand</span><br/>
+      <%-- @related_2 --%>
+      <a target="_blank" name="${image.key}" href="${contextURL}/viewimg?vid=${User.selectedItem.selectedVariant.productvariantid}&image=${image.key}">
+
+          <loose:getimagesrc imagePath="${image.value}"/>  
+
+          <img id="noscript${image.key}" 
+             itemprop="image" class="borderless" 
+             src="${getimagesrc_imageSrc}" 
+             alt="${User.selectedItem.record.productName}" 
+             title="${User.selectedItem.record.productName}"/> 
+      </a>
+    </div>
+  </c:forEach>
+</c:if>
+<c:if test="${!User.selectedItem.thirdParty}">
+  <br/>
+  <a name="contactUser"></a>
+  <div class="width1 myBorder4">
+    <%@include file="/WEB-INF/jspf/contactSellerForm.jspf"%>  
+  </div>
+</c:if>
+

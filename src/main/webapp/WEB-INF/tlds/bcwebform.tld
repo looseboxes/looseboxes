@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>bcwebform</short-name>
+  <uri>http://forms.looseboxes.com/jsp/jstl/bcwebform</uri>
+  <!-- A validator verifies that the tags are used correctly at JSP
+          translation time. Validator entries look like this: 
+       <validator>
+           <validator-class>com.mycompany.TagLibValidator</validator-class>
+           <init-param>
+              <param-name>parameter</param-name>
+              <param-value>value</param-value>
+           </init-param>
+       </validator>
+    -->
+  <!-- A tag library can register Servlet Context event listeners in
+         case it needs to react to such events. Listener entries look
+         like this: 
+      <listener>
+          <listener-class>com.mycompany.TagLibListener</listener-class> 
+      </listener>
+    -->
+  <tag-file>
+    <name>confirmationform</name>
+    <path>/WEB-INF/tags/bcwebform/confirmationform.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>displayallformfields</name>
+    <path>/WEB-INF/tags/bcwebform/displayallformfields.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>displayfieldmessage</name>
+    <path>/WEB-INF/tags/bcwebform/displayfieldmessage.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>displayformfield</name>
+    <path>/WEB-INF/tags/bcwebform/displayformfield.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>displayformfields</name>
+    <path>/WEB-INF/tags/bcwebform/displayformfields.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>form</name>
+    <path>/WEB-INF/tags/bcwebform/form.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>formNav</name>
+    <path>/WEB-INF/tags/bcwebform/formNav.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>formStage</name>
+    <path>/WEB-INF/tags/bcwebform/formStage.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>formStages</name>
+    <path>/WEB-INF/tags/bcwebform/formStages.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>formverification</name>
+    <path>/WEB-INF/tags/bcwebform/formverification.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>defaultformNav</name>
+    <path>/WEB-INF/tags/bcwebform/defaultformNav.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>defaultform</name>
+    <path>/WEB-INF/tags/bcwebform/defaultform.tag</path>
+  </tag-file>
+  <tag-file>
+    <name>truncate</name>
+    <path>/WEB-INF/tags/bcwebform/truncate.tag</path>
+  </tag-file>
+</taglib>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <div class="handWriting">
+      <p>Hi,</p>
+      <p>
+        You're welcome to <b>${siteName}</b>. We ensure you can't get our quality of
+        fashion cheaper elsewhere. Find out more <a href="../info/why_us.jsp">here</a>.
+      </p>
+<!--      
+      <p>
+        Start by completing the registration process <a href="../editux">here</a>.
+        You could skip that for later though.
+      </p>
+-->
+      Here's 3 useful links:
+      <ul>
+        <li><a href="../help/FAQs.jsp#search">How to search for an item</a></li>
+        <li><a href="../help/index.jsp"><i>${siteName}</i> help files</a></li>
+        <li><a href="../info/sitemap.jsp"><i>${siteName}</i> site map</a></li>
+      </ul>
+    </div>
+</root>

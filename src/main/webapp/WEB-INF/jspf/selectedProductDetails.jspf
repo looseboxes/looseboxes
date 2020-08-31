@@ -1,0 +1,32 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+
+<jsp:useBean id="User" class="com.looseboxes.web.components.UserBean" scope="session"/>
+
+<%-- The background-color covers the map. So with map we don't use background-color --%>    
+<c:choose>
+  <c:when test="${User.selectedItem.canBeLocated}">
+    <c:set var="displayAreaStyle" value="vertical-align:top;"/>  
+  </c:when>  
+  <c:otherwise>
+    <c:set var="displayAreaStyle" value="vertical-align:top; background-color:#EEEEEE;"/>  
+  </c:otherwise>  
+</c:choose>    
+
+<c:choose>
+  <c:when test="${!mobile}">
+      
+    <noscript>
+      <h2>This page uses javascript. Please enable javascript to view this page correctly!</h2>
+    </noscript>
+    
+    <%@include file="/WEB-INF/jspf/selectedProductDetailsScript.jspf"%>
+
+  </c:when>    
+  <c:otherwise>
+    <div>
+      <%@include file="/WEB-INF/jspf/selectedProductDetailsNoscript.jspf"%>  
+    </div>
+  </c:otherwise>
+</c:choose>

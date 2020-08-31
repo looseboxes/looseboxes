@@ -1,0 +1,29 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<br/>
+<p class="centeredBlock">
+  <c:if test="${!mobile}">
+    <a href="${contextURL}/info/about.jsp">About</a>&emsp;    
+    <a href="${contextURL}/info/contact_us.jsp">Contact Us</a>&emsp;    
+    <a href="${contextURL}/cat/${productcategory}/articles/index.jsp">Articles</a>&emsp;    
+    <a href="${contextURL}/legal/index.jsp">Legal Notices</a>&emsp;    
+  </c:if>
+  <a href="${contextURL}/info/sitemap.jsp">Site Map</a>&emsp;    
+  <a href="${contextURL}/help/index.jsp">Help</a>
+</p>
+<div style="text-align:center">
+  <c:if test="${mobile}">
+    <a href="${contextURL}/index.jsp?mobile=false">browse full version</a><br/>
+  </c:if>  
+  <br/>&nbsp;&copy;2009<c:if test="${currentYear != null}"> - ${currentYear}</c:if>&nbsp;${siteName}
+</div>
+      
+<c:if test="${!App.productionMode || User.admin}">
+  <div>
+    My messages: ${myMessages}<br/>
+    User loggedin to chat: ${User.loggedInToChat}<br/>
+    Server info: ${pageContext.servletContext.serverInfo}<br/>   
+    Free memory: <%=Runtime.getRuntime().freeMemory()%><br/>
+    Logged in users: <%=com.looseboxes.web.servlets.Login.loggedInUsers%>
+  </div>
+</c:if>
+

@@ -1,0 +1,10 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:if test="${advertBanner != null && advert2Banner != null}">
+    <span class="advert borderless">
+      <img src="${localURL}/images/adverts/${productcategory}/${advertBanner}" alt="advert here"/>
+    </span>
+    <span class="advert borderless">
+      <img src="${localURL}/images/adverts2/${advert2Banner}" alt="advert here"/>
+    </span>
+</c:if>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <p>Selling is not currently enabled on this site.</p>    
+  <p>
+    This is to ensure only distributors with the highest quality fashion at
+    competitive prices sell on ${siteName}.
+  </p>
+  <p>For enquires on how to sell on ${siteName}: <a href="../info/contact_us.jsp">Contact Us</a></p>
+<!--    
+  <p>
+    Uploading an item means you that you have that item to offer for sale/rent/lease etc.
+  </p>
+  <ul>
+    <li>
+      To offer an item for sale/rent/lease etc <strong>click the <tt>upload</tt> 
+      button</strong> found besides the search button
+    </li>  
+    <li>
+      A form will be displayed. <strong>Fill in the necessary details</strong> of the item you
+      intend to offer,
+      (only details marked with a red asterisk &lsquo;<font style="color:red">*</font>&rsquo;&nbsp;are mandatory)
+    </li>
+    <li>
+      <strong>Click the next button</strong>. A confirmation page will appear
+      displaying the details you entered. You may return to the form by clicking 
+      the <tt>back</tt> button    
+    </li>
+    <li>
+      <strong>Click the <tt>submit</tt> button</strong> to proceed and presto!
+      your product will be displayed when a matching search is conducted.
+    </li>
+  </ul>
+-->  
+</root>

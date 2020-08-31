@@ -1,0 +1,16 @@
+<%@page pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<c:choose>
+  <c:when test="${!User.loggedIn}">
+    <b>Login to send a message to the seller<c:if test="${!mobile}">: (${User.selectedItem.seller.username})</c:if></b>      
+  </c:when>    
+  <c:otherwise>
+    <p><b>Send a message to the seller<c:if test="${!mobile}">: (${User.selectedItem.seller.username})</c:if></b></p>
+    <loose:contactuser messageType="penq"  
+    targetProductId="${User.selectedItem.productId}" chatWithRecipient="${User.selectedItem.sellerLoggedInToChat}"                  
+    fromEmail="${User.details.emailAddress}" fromUsername="${User.details.username}"
+    toEmail="${User.selectedItem.seller.emailAddress}" toUsername="${User.selectedItem.seller.username}"/>
+  </c:otherwise>
+</c:choose>
+

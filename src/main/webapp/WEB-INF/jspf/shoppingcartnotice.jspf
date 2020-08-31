@@ -1,0 +1,7 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${User.shoppingCart != null && not empty User.shoppingCart.items}">
+  <a class="borderless" href="${contextURL}/cart/index.jsp">
+    <img class="cart2Img" src="${contextURL}/images/transparent.gif" alt="cart"/>   
+    <b style="color:white;">${User.shoppingCart.itemCount}</b>  
+  </a>  
+</c:if>

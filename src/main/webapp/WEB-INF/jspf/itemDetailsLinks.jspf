@@ -1,0 +1,41 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<table>
+  <tr>
+    <td>
+      <button onclick="window.location='#displayArea'" onmouseover="myDropDownMenu.openExcl('details', true)"
+        class="plainBtnLayout fullWidth" type="button">
+          <b>Details</b>  
+      </button>
+    </td>      
+  </tr>    
+  <tr>
+    <td>
+<%-- @related_commentsArea --%>      
+      <button onclick="window.location='#commentsArea'"
+        class="plainBtnLayout fullWidth" type="button">
+        View Comments  
+      </button>
+    </td>      
+  </tr>    
+  <c:forEach var="image" varStatus="vs" items="${User.selectedItem.images}">
+    <c:choose>
+      <c:when test="${fn:startsWith(image.value, 'http://')}">
+        <c:set var="imagePath" value="${image.value}"/>      
+      </c:when>  
+      <c:otherwise>
+        <c:set var="imagePath" value="${localURL}${image.value}"/>        
+      </c:otherwise>
+    </c:choose>  
+    <tr>
+      <td>
+        <button onclick="window.location='#displayArea'" 
+          onmouseover="myDropDownMenu.openExcl('selectedImageDiv${vs.index}', true); looseboxes.loadAndDisplayImage(null, null, 'selectedImage${vs.index}', '${imagePath}', 'selectedImageLink${vs.index}', '${contextURL}/viewimg?vid=${User.selectedItem.selectedVariant.productvariantid}&image=${image.key}')"      
+          class="plainBtnLayout fullWidth" type="button" title="${User.selectedItem.record.productName}">
+          Image ${vs.index + 1}  
+        </button>
+      </td>      
+    </tr>    
+  </c:forEach>
+</table>

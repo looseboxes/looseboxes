@@ -1,0 +1,271 @@
+FINER: #doFilter
+Jul 26, 2016 9:48:44 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:44 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:44 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:44 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:44 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:46 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:47 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+[EL Fine]: sql: 2016-07-26 09:48:47.968--ServerSession(20927280)--Connection(21733779)--SELECT COUNT(productid) FROM product WHERE (availabilityid IS NULL)
+[EL Fine]: sql: 2016-07-26 09:48:48.55--ServerSession(20927280)--Connection(21733779)--SELECT COUNT(productid) FROM product WHERE (availabilityid IS NULL)
+[EL Fine]: sql: 2016-07-26 09:48:49.504--ServerSession(20927280)--Connection(21733779)--SELECT COUNT(productid) FROM product WHERE (availabilityid IS NULL)
+[EL Fine]: sql: 2016-07-26 09:48:50.318--ServerSession(20927280)--Connection(21733779)--SELECT COUNT(productid) FROM product WHERE (availabilityid IS NULL)
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:50 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:48:51 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:51 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:48:51 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:48:51 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:48:51 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:48:51 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+[EL Fine]: sql: 2016-07-26 09:48:51.353--ServerSession(20927280)--Connection(21733779)--SELECT COUNT(productid) FROM product WHERE (availabilityid IS NULL)
+[EL Fine]: sql: 2016-07-26 09:54:23.813--ServerSession(20927280)--Connection(21733779)--SELECT productcategoryid, productcategory, productcategory_sortorder, itemtypeid FROM productcategory
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doFilter
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: #wrapRequest
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: Wrapped request: com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper@1e3b17
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: name: productcategory, alternate: null
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: #doBeforeProcessing. continue filter chain: true
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter 
+FINER: Filter chain is null: false
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.servlets.Search 
+FINER: Next Servlet Class Name: null for session: 7DBB39B87D5B60531308E2BAFA73B814
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: name: page, alternate: null
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: name: searchText, alternate: null
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: Adding alternate {0} for {1}
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: Composite names: [cat, productcategoryid, availabilityid]
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: name: productcategoryid, alternate: cat
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.filters.PageFilter$MaskShortNamesRequestWrapper 
+FINER: name: productcategoryid, alternate: cat, value: fashion
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.servlets.Search 
+FINE: Parameters: {productcategoryid=fashion, availabilityid=InStock, cat=fashion}
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.servlets.Search 
+FINE: searchText = null, search params: {productcategoryid=fashion, availabilityid=InStock, cat=fashion}
+Jul 26, 2016 9:54:23 AM com.looseboxes.web.servlets.Search 
+FINE: ID = null
+[EL Fine]: sql: 2016-07-26 09:54:28.09--ServerSession(20927280)--Connection(21733779)--SELECT availabilityid, availability FROM availability
+[EL Warning]: 2016-07-26 09:54:29.119--UnitOfWork(8370855)--Exception [EclipseLink-6078] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The class of the argument for the object comparison is incorrect. 
+Expression: [
+Base com.looseboxes.pu.entities.Product] 
+Mapping: [org.eclipse.persistence.mappings.ManyToOneMapping[productcategoryid]] 
+Argument: [fashion]
+Query: ReportQuery(referenceClass=Product )
+Jul 26, 2016 9:54:29 AM com.looseboxes.web.servlets.Search 
+WARNING: com.looseboxes.web.servlets.Search does not define an error page for this exception type hence exception will be re-thrown: javax.persistence.PersistenceException: Exception [EclipseLink-6078] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The class of the argument for the object comparison is incorrect. 
+Expression: [
+Base com.looseboxes.pu.entities.Product] 
+Mapping: [org.eclipse.persistence.mappings.ManyToOneMapping[productcategoryid]] 
+Argument: [fashion]
+Query: ReportQuery(referenceClass=Product )
+Jul 26, 2016 9:54:29 AM com.looseboxes.web.servlets.Search 
+FINER: Request Message(s): null
+Jul 26, 2016 9:54:29 AM com.looseboxes.web.filters.PageFilter 
+WARNING: Error in aplication: class com.looseboxes.web.filters.PageFilter
+javax.persistence.PersistenceException: Exception [EclipseLink-6078] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The class of the argument for the object comparison is incorrect. 
+Expression: [
+Base com.looseboxes.pu.entities.Product] 
+Mapping: [org.eclipse.persistence.mappings.ManyToOneMapping[productcategoryid]] 
+Argument: [fashion]
+Query: ReportQuery(referenceClass=Product )
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:547)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.getSingleResult(EJBQueryImpl.java:400)
+	at com.bc.jpa.paging.SimplePagingList.calculateSize(SimplePagingList.java:190)
+	at com.bc.jpa.paging.SimplePagingList.initPagesBuffer(SimplePagingList.java:101)
+	at com.bc.jpa.paging.AbstractPagingList.getBatches(AbstractPagingList.java:77)
+	at com.bc.jpa.paging.SimplePagingList.size(SimplePagingList.java:88)
+	at com.bc.jpa.search.QuerySearchResults.getSize(QuerySearchResults.java:82)
+	at com.looseboxes.web.servlets.SearchServlet.handleRequest(SearchServlet.java:65)
+	at com.looseboxes.web.servlets.BaseServlet.processRequest(BaseServlet.java:163)
+	at com.looseboxes.web.servlets.BaseServlet.processRequest(BaseServlet.java:115)
+	at com.looseboxes.web.servlets.BaseServlet.doGet(BaseServlet.java:452)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at com.bc.web.core.filters.BaseFilter.doFilter(BaseFilter.java:102)
+	at com.bc.web.core.filters.PageRedirectionFilter.doFilter(PageRedirectionFilter.java:50)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:956)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:436)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:625)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2517)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2506)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: Exception [EclipseLink-6078] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The class of the argument for the object comparison is incorrect. 
+Expression: [
+Base com.looseboxes.pu.entities.Product] 
+Mapping: [org.eclipse.persistence.mappings.ManyToOneMapping[productcategoryid]] 
+Argument: [fashion]
+Query: ReportQuery(referenceClass=Product )
+	at org.eclipse.persistence.exceptions.QueryException.incorrectClassForObjectComparison(QueryException.java:601)
+	at org.eclipse.persistence.mappings.OneToOneMapping.buildObjectJoinExpression(OneToOneMapping.java:298)
+	at org.eclipse.persistence.internal.expressions.RelationExpression.normalize(RelationExpression.java:830)
+	at org.eclipse.persistence.internal.expressions.CompoundExpression.normalize(CompoundExpression.java:224)
+	at org.eclipse.persistence.internal.expressions.SQLSelectStatement.normalize(SQLSelectStatement.java:1449)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.buildReportQuerySelectStatement(ExpressionQueryMechanism.java:641)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.buildReportQuerySelectStatement(ExpressionQueryMechanism.java:586)
+	at org.eclipse.persistence.internal.queries.ExpressionQueryMechanism.prepareReportQuerySelectAllRows(ExpressionQueryMechanism.java:1694)
+	at org.eclipse.persistence.queries.ReportQuery.prepareSelectAllRows(ReportQuery.java:1203)
+	at org.eclipse.persistence.queries.ReadAllQuery.prepare(ReadAllQuery.java:744)
+	at org.eclipse.persistence.queries.ReportQuery.prepare(ReportQuery.java:1071)
+	at org.eclipse.persistence.queries.DatabaseQuery.checkPrepare(DatabaseQuery.java:661)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.checkPrepare(ObjectLevelReadQuery.java:901)
+	at org.eclipse.persistence.queries.DatabaseQuery.checkPrepare(DatabaseQuery.java:613)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:867)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1127)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:403)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1215)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2896)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1804)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1786)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1751)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:258)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:517)
+	... 37 more
+

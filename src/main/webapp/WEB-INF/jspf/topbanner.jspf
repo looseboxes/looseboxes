@@ -1,0 +1,54 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+
+<%@include file="/WEB-INF/jspf/myMessage.jspf"%>
+
+<c:import var="sliderhtml" url="${contextURL}/slider.html"/>
+
+<c:if test="${!mobile}">
+  <table class="fullWidth" style="background-image:url('/images/wallpaper.jpg'); background-repeat:repeat;">
+    <tr>
+      <td class="leftColumnWidth">
+        <img width="100" height="64" src="${contextURL}/images/icon.png" alt="${siteName} logo"/>
+      </td>
+      <td>
+<%-- <img alt="${productcategory} banner" style="width:100%" src="${contextURL}/images/${productcategory}.jpg"/> --%>      
+        <%--c:out value="${sliderhtml}" escapeXml="false"/--%> 
+        <%@include file="/WEB-INF/jspf/searchBox.jspf"%>
+      </td>    
+    </tr>
+  </table>
+</c:if>
+<div class="mainHeader">
+  <span id="mainHeaderLogo">${siteName}</span>&emsp;
+  <c:choose>
+    <c:when test="${!mobile}">
+      &emsp;
+    </c:when>
+    <c:otherwise>
+      <%@include file="/WEB-INF/jspf/shoppingcartnotice.jspf"%><br/>
+    </c:otherwise>
+  </c:choose>
+  <span>
+    <a href="${contextURL}/products/searchresults.jsp">Home</a>&nbsp;&nbsp; 
+    <c:choose>
+      <c:when test="${User.loggedIn}">
+        <a href="${contextURL}/logout">Logout</a>
+      </c:when>
+      <c:otherwise>
+        <a href="${contextURL}/user/login.jsp">Login</a>&nbsp;&nbsp;<a href="${contextURL}/user/join.jsp">Join</a>
+      </c:otherwise>
+    </c:choose>
+  </span>
+  <c:if test="${!mobile}">
+    <span class="floatRight">
+      <%@include file="/WEB-INF/jspf/shoppingcartnotice.jspf"%>
+    </span>  
+  </c:if>  
+</div>
+<c:if test="${mobile}">
+  <%@include file="/WEB-INF/jspf/searchBox.jspf"%>
+</c:if>
+<%--iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fbuzzwears&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=350&amp;height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:20px; margin:4px;" allowTransparency="true"></iframe--%>    
+<%--@todo span id="myscroller"></span --%>

@@ -1,0 +1,69 @@
+/** CSS SPRITES STYLES */
+.deleteUserImg{ background: url('../images/css_sprites.png') 0 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.editImg{ background: url('../images/css_sprites.png') -32px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.editUserImg{ background: url('../images/css_sprites.png') -64px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.facebookImg{ background: url('../images/css_sprites.png') -96px 0; left:0; width:32px; height:31px; border:none; margin:0; padding:0; }
+.favoritesImg{ background: url('../images/css_sprites.png') -128px 0; left:0; width:32px; height:31px; border:none; margin:0; padding:0; }
+.homeImg{ background: url('../images/css_sprites.png') -159px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.mailImg{ background: url('../images/css_sprites.png') -191px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.paperclipImg{ background: url('../images/css_sprites.png') -223px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.twitterImg{ background: url('../images/css_sprites.png') -255px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.rssImg{ background: url('../images/css_sprites.png') -287px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.searchImg{ background: url('../images/css_sprites.png') -318px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.articleImg{ background: url('../images/css_sprites.png') -350px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.editDocumentImg{ background: url('../images/css_sprites.png') -382px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.discussionImg{ background: url('../images/css_sprites.png') -414px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.gamesImg{ background: url('../images/css_sprites.png') -446px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.googleplusImg{ background: url('../images/css_sprites.png') -478px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.uploadImg{ background: url('../images/css_sprites.png') -510px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.personImg{ background: url('../images/css_sprites.png') -542px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.phoneImg{ background: url('../images/css_sprites.png') -574px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+.peopleImg{ background: url('../images/css_sprites.png') -606px 0; left:0; width:32px; height:32px; border:none; margin:0; padding:0; }
+/** xxxImg2 is 16px by 16px */
+.deleteUserImg2{ background: url('../images/css_sprites.png') 0 -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.editImg2{ background: url('../images/css_sprites.png') -16px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.editUserImg2{ background: url('../images/css_sprites.png') -32px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.facebookImg2{ background: url('../images/css_sprites.png') -48px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.favoritesImg2{ background: url('../images/css_sprites.png') -64px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.homeImg2{ background: url('../images/css_sprites.png') -80px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.mailImg2{ background: url('../images/css_sprites.png') -96px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.paperclipImg2{ background: url('../images/css_sprites.png') -112px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.twitterImg2{ background: url('../images/css_sprites.png') -128px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.rssImg2{ background: url('../images/css_sprites.png') -144px -32px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.searchImg2{ background: url('../images/css_sprites.png') 0 -47px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.articleImg2{ background: url('../images/css_sprites.png') -16px -47px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.editDocumentImg2{ background: url('../images/css_sprites.png') -32px -47px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.discussionImg2{ background: url('../images/css_sprites.png') -48px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.gamesImg2{ background: url('../images/css_sprites.png') -64px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.googleplusImg2{ background: url('../images/css_sprites.png') -80px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.uploadImg2{ background: url('../images/css_sprites.png') -96px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.personImg2{ background: url('../images/css_sprites.png') -112px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.phoneImg2{ background: url('../images/css_sprites.png') -128px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.peopleImg2{ background: url('../images/css_sprites.png') -144px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+
+.barForArrowsImg{ background: url('../images/css_sprites.png') -160px -32px; left:0; width:2px; height:12px; border:none; margin:0; padding:0; }
+.previousArrowImg{ background: url('../images/css_sprites.png') -162px -32px; left:0; width:7px; height:12px; border:none; margin:0; padding:0; }
+.nextArrowImg{ background: url('../images/css_sprites.png') -169px -32px; left:0; width:7px; height:12px; border:none; margin:0; padding:0; }
+
+.calendarImg{ background: url('../images/css_sprites.png') -160px -48px; left:0; width:16px; height:16px; border:none; margin:0; padding:0; }
+.calPrevImg{ background: url('../images/css_sprites.png') -180px -32px; left:0; width:17px; height:17px; border:none; margin:0; padding:0; }
+.calNextImg{ background: url('../images/css_sprites.png') -197px -32px; left:0; width:17px; height:17px; border:none; margin:0; padding:0; }
+.animatedFavicon{ background: url('../images/css_sprites.png') -180px -48px; left:0; width:18px; height:18px; border:none; margin:0; padding:0; }
+.googleImg{ background: url('../images/css_sprites.png') -222px -36px; left:0; width:28px; height:28px; border:none; margin:0; padding:0; }
+.yahooImg{ background: url('../images/css_sprites.png') -258px -38px; left:0; width:27px; height:27px; border:none; margin:0; padding:0; }
+.addToCartImg{ background: url('../images/css_sprites.png') -290px -36px; left:0; width:30px; height:30px; border:none; margin:0; padding:0; }
+.removeFromCartImg{ background: url('../images/css_sprites.png') -320px -36px; left:0; width:30px; height:30px; border:none; margin:0; padding:0; }
+
+.cart1Img{ background: url('../images/css_sprites.png') 0px -70px; left:0; width:35px; height:38px; border:none; margin:0; padding:0; }
+.cart2Img{ background: url('../images/css_sprites.png') -36px -70px; left:0; width:35px; height:37px; border:none; margin:0; padding:0; }
+.liveChat1Img{ background: url('../images/css_sprites.png') -72px -72px; left:0; width:35px; height:36px; border:none; margin:0; padding:0; }
+.liveChat2Img{ background: url('../images/css_sprites.png') -108px -73px; left:0; width:35px; height:36px; border:none; margin:0; padding:0; }
+.liveChat3Img{ background: url('../images/css_sprites.png') -140px -70px; left:0; width:37px; height:37px; border:none; margin:0; padding:0; }
+
+.buttonBackground1{ background: url('../images/css_sprites.png') -181px -82px; left:0; width:106px; height:28px; border:none; margin:0; padding:0; }
+.buttonBackground2{ background: url('../images/css_sprites.png') -287px -82px; left:0; width:106px; height:28px; border:none; margin:0; padding:0; }
+.paymentGatewayImg{ background: url('../images/css_sprites.png') -0px -259px; left:0; width:445px; height:30px; border:none; margin:0; padding:0; }
+
+.freeDeliveryImg{ background: url('../images/css_sprites.png') -442px -37px; left:0; width:67px; height:80px; border:none; margin:0; padding:0; }
+.moneyBackImg{ background: url('../images/css_sprites.png') -510px -37px; left:0; width:67px; height:80px; border:none; margin:0; padding:0; }
+

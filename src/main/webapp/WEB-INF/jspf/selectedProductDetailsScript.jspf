@@ -1,0 +1,98 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="/WEB-INF/tlds/bcsocial" prefix="social"%>
+
+<table>
+  <tr>
+    <td id="leftColumn" class="mySmaller floatRight" style="vertical-align:top">
+      <social:socialshare  
+      ssItemRecord="${User.selectedItem.record}" 
+      ssLargeIcons="true" 
+      ssOwnerEmail="${User.selectedItem.seller.emailAddress}"/>  
+      <br/>
+      <%@include file="/WEB-INF/jspf/itemDetailsLinks.jspf"%>  
+    </td>    
+    <td>
+      <div>
+        <%@include file="/WEB-INF/jspf/itemDetailsTopLinks.jspf"%>
+      </div>
+<%-- These are displayed by request --%>
+      <div id="displayArea" class="width1" style="${displayAreaStyle}">
+        <div id="details" class="hidden width1 myBorder4 whiteBackground">
+          <loose:closeButton buttonClass="boldRed floatRight" elementToClose="details"/><br/>  
+          <%@include file="/WEB-INF/jspf/itemDetails.jspf"%>
+        </div>
+        <c:if test="${!User.selectedItem.thirdParty}">
+          <div id="contactUser" class="hidden width1 myBorder4 whiteBackground">
+            <loose:closeButton buttonClass="boldRed floatRight" elementToClose="contactUser"/><br/>  
+            <%@include file="/WEB-INF/jspf/contactSellerForm.jspf"%>  
+          </div>
+        </c:if>
+        <c:if test="${User.selectedItem.images != null}">
+          <c:forEach varStatus="vs" var="image" items="${User.selectedItem.images}">
+            <div id="selectedImageDiv${vs.index}" class="hidden width1 myBorder4 whiteBackground">
+              <loose:closeButton buttonClass="boldRed floatRight" elementToClose="selectedImageDiv${vs.index}"/><br/>  
+              <span class="mySmaller">Click on this image to expand</span><br/>
+              <%-- @related_2 --%>
+              <a id="selectedImageLink${vs.index}" target="_blank" href="${contextURL}/viewimg?vid=${User.selectedItem.selectedVariant.productvariantid}&image=${image.key}">
+                  
+                <loose:getimagesrc imagePath="${image.value}"/>  
+
+                <img id="selectedImage${vs.index}" 
+                   itemprop="image" class="borderless" 
+                   src="${getimagesrc_imageSrc}" 
+                   alt="${User.selectedItem.record.productName}" 
+                   title="${User.selectedItem.record.productName}"/> 
+              </a>
+            </div>
+          </c:forEach>
+        </c:if>  
+<%-- This is what is initially displayed --%>        
+        <c:choose>
+          <c:when test="${User.selectedItem.canBeLocated}">
+            <br/>  
+            <a name="mapview"></a>  
+            <%@include file="/WEB-INF/jspf/googlemap.jspf"%>
+          </c:when>
+          <c:otherwise>
+            <c:choose>
+              <c:when test="${not empty User.selectedItem.images}">
+<%-- Display the first image only --%>
+              <c:forEach begin="0" end="0" varStatus="vs" var="image" items="${User.selectedItem.images}">
+                <div id="initialImageDiv" class="width1 myBorder4 whiteBackground">
+                  <loose:closeButton buttonClass="boldRed floatRight" elementToClose="initialImageDiv"/><br/>  
+                  <span class="mySmaller">Click on this image to expand</span><br/>
+                  <%-- @related_2 --%>
+<%-- @related_ids initialImage and initialImageLink --%>            
+                  <a id="initialImageLink" target="_blank" href="${contextURL}/viewimg?vid=${User.selectedItem.selectedVariant.productvariantid}&image=${image.key}">
+                  
+                    <loose:getimagesrc imagePath="${image.value}"/>  
+
+                    <img id="initialImage" 
+                       itemprop="image" class="borderless" 
+                       src="${getimagesrc_imageSrc}" 
+                       alt="${User.selectedItem.record.productName}" 
+                       title="${User.selectedItem.record.productName}"/> 
+                  </a>
+                </div>
+              </c:forEach>
+              </c:when>    
+              <c:otherwise>
+                <p class="handWriting">
+                  <loose:itemSummary 
+                      isAvailability="${User.selectedItem.record.availabilityid.availability == 'InStock' ? null : User.selectedItem.record.availabilityid.availability}" 
+                      isDiscount="${User.selectedItem.record.discount}" 
+                      isPrice="${User.selectedItem.record.price}" 
+                      isProductName="${User.selectedItem.record.productName}" 
+                      isSeparator="<br/>"/>
+                  <span class="mySmaller">${User.selectedItem.record.views} views</span>
+                </p>
+              </c:otherwise>
+            </c:choose>  
+          </c:otherwise>
+        </c:choose>  
+      </div>    
+    </td>    
+  </tr>    
+</table> 

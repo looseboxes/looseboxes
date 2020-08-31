@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <p>
+    <ul>
+      <li>Search for the item your require <em>(You can also search for product IDs)</em></li>
+      <li>Click on the <tt>more link</tt> or image of the item you want to buy</li>
+      <li>The items details will be displayed</li>
+    </ul>
+    While viewing the items details, you may buy the item by:
+    <ul>
+      <li>
+        <strong>Adding the item to cart: </strong>    
+        Click the <tt>Add to cart</tt> button to add the item to your shopping cart.
+        Click the <tt>View cart</tt> button to view your shopping cart at any time.
+        Follwing the instructions from the shopping cart to buy the item.
+      </li>  
+      <li>
+        <strong>Contacting the seller directly: </strong>    
+        Click the <tt>contact source</tt> or <tt>contact seller</tt> etc button
+        to contact the source of the selected item directly.        
+      </li>    
+    </ul>
+  </p>    
+</root>

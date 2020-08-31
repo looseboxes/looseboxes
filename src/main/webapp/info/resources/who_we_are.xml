@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <strong>${siteName}</strong> &copy; is a subsidiary of <em>NUROX Ltd</em> &copy;
+    (<a href="../info/about_nuroxltd.jsp">learn more</a>)
+    <br/><br/>
+    ${siteName} is basically a free <tt>Information Service</tt> for buyers and sellers.
+    We provide information on the best prices and quality for various goods and
+    services. 
+    <ul>
+      <li>We provide <tt>market information</tt> (free of charge)</li>    
+      <li>
+        We provide quick, easy and safe connections between buyers and sellers
+        through our email, comments, chat and other services.
+      </li>    
+    </ul>
+    <strong>We are not one shop, but the voice of many</strong>
+    <ul>
+      <li>${siteName} is a free portal for sellers</li>    
+      <li>Items on ${siteName} are uploaded by various producers, wholesalers, agents, individuals etc</li>    
+      <li>We currently operate a <b>Free Delivery Service</b> within Abuja town for items worth more than NGN 10,000.</li>
+      <li>Buyers may also wish to pick up their items from any of our point of contacts</li>
+      <li>Buyers are informed of the nearest point of contact after purchase</li>
+      <li>
+        Buyers outside Abuja are required to pay for shipping from Abuja.
+      </li>
+      <li>Buyers outside Abuja may also organize for collecting their items from
+        any of our point of contacts.
+      </li>
+    </ul>
+    <strong>Our service to buyers</strong>
+    <ul>
+      <li>
+        We help buyers make sense of large amounts of information by provding
+        a means of categorising, sorting and comparing information
+      </li>    
+      <li>We offer 
+        <a target="_blank" href="../info/buyerProtection.jsp">Buyer Protection</a>
+        - The seller gets paid only when you confirm you have recieved the product
+        in satisfactory condition.
+      </li>    
+    </ul>
+    <strong>Our service to sellers</strong>
+    <ul>
+      <li>We help sellers reach a wide range of buyers by sending free emails 
+      to our registered users who have shown interest in the sellers product</li>
+      <li>We help sellers by providing periodic market insight for free</li>
+    </ul>
+    <p>
+      ${siteName} is maintained by a community of developers dedicated to
+      provding:
+      <strong>Free</strong>, <strong>Safe</strong>, <strong>Easy to Use</strong> and <strong>Timely</strong>
+      services.
+    </p>
+    <br/>
+    <a href="../info/contact_us.jsp">Contact Us</a>
+</root>

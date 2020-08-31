@@ -1,0 +1,270 @@
+/** 
+The mobile version of these styles are contained in mobile.css 
+Any modification here must be reflected there
+*/
+/** 1px=0.0625em 2px=0.125em 6px=0.375em 10px=0.625em 11px=0.6875em 12px=0.75em 13px=0.8125em 14px=0.875em 16px=1em 18px=1.125 */
+/** @related_12 */
+html{ font-size:100%; } /** IE 5/6 hack required for using em font size*/
+body{ font-size:24px; width:100%; height:100%; margin:0; padding:0; text-align:justify; color:#555555; font-family:Verdana,Helvetica,sans-serif,Arial; }
+
+a{ text-decoration:none; }
+.noclass{}
+
+.background0 { background-color:rgb(240,235,255); }
+.whiteBackground{ background-color:white; }
+
+#wrapper{ min-height:100%; position:relative; }
+/** 208 + 480 + 208 = 896 */
+#header{ width:100%; padding:0; background:0; }        
+#content{ width:100%; margin:0 auto; border:0; padding:0.125em; padding-bottom:5em; }
+#footer{ width:100%; height:5em; position:absolute; bottom:0; left:0; }
+
+.full{ width:100%; height:100%; }
+.fullHeight{ height:100%; }  
+.fullWidth{ width:100%; }
+.width0{ width:95%; }
+.width1{ width:30em; }/** width:480px=30em width:470px=29.375em */
+.width2{ width:13em; } /** width:208px=13em width:200px=12.5em */
+.width3{ width:75%; }
+.width4{ width:50%; }
+.width5{ width:45em; }
+
+.myEm1{ font-size:1.25em; font-weight:500; }  
+
+.srRow{ text-align:justify; padding:0.25em; }
+.srCell{ text-align:left; padding:0.25em; vertical-align:top; }
+.srImage{ width:98%; height:auto; }
+.srNoImage{ width:98%; height:auto; padding:4em 0 4em 0; }
+.srDescription{ line-height:1.5em; }
+.srPageLinksSelected{ font-size:1.5em; border:1px solid blue; padding:0 0.25em 0 0.25em; }
+.srPageLinks{ font-size:1em; }
+
+.tview{ text-align:left; }
+.tview div{ width:100%; }
+.tview div span{ display: inline-block; }
+
+.tableView0{ overflow:hidden; }
+.tableView0 .clearBoth{ clear:both; visibility:hidden; }
+.tableView0 .cellView{ float:left; }
+
+.form0 { line-height:1.5em; }
+.form0 input{ font-size:1.2em; margin-bottom:0.25em; }
+.form0 select{ font-size:1.2em; margin-bottom:0.25em; }
+.form0 textarea{ font-size:1.2em; margin-bottom:0.25em; }
+.formStage{ display:inline-block; padding:0.25em; }
+.formNav{ width:5em; height:1.75em; }
+.formInput{ width:96%; }
+
+.formColumn1{ width: 20%; }
+.formColumn2{ }
+.formColumn3{ }
+
+.tone0{ color:#666666; background-color:#EEEEFF; }
+.justifiedContent{ text-align:justify; }      
+.justifiedBlock{ display:block; text-align:justify; }      
+
+.mainHeader{ width: 100%; background-color:#222222; color:#DDEEFF; }
+.mainHeader a{ text-align:center; color:#DDEEFF; }
+/** 16% x 6 cols = 96% */
+.mainHeader a:hover{ color:black; background-color:white; }
+.mainHeader a:active{ color:black; background-color:white; }
+
+#mainHeaderLogo{ text-align:left; color:yellow; font-style:italic; font-size:1.2em; 
+            font-family:"lucida calligraphy", sans-serif; 
+}
+.layout1{ color:#AABBCC; font-style:italic; 
+       font-family:"lucida calligraphy", sans-serif; 
+}
+.myFontSize0{ font-size: 0.6875em; } 
+.myFontSize1{ font-weight:200; font-size:1em; }
+.myFontSize1b{ font-weight:300; font-size:1.5em; }
+.myFontSize2{ font-weight:500; font-size:2em; }
+.myFontSize3{ font-weight:900; font-size:3.125em; }
+
+#logoCommunity{ 
+    text-align:left; color:#222222; font-size:1em;
+    font-weight:600; font-family:"lucida calligraphy", sans-serif; 
+}
+#siteCaption{ text-align:center; color:#CCCCCC; font-weight:bold; }
+#indexContent{ text-align:center; width:100%; }
+/** #indexSearchBox{ width:57%; display:inline-block; margin: 10% 0 15% 2%; } */
+#indexSearchBox{ display:inline-block; width:70%; margin-top: 10%; text-align:center; }
+
+.spacedList li{ margin-bottom: 0.5em; }    
+.spaced{ margin-bottom: 0.25em; }
+.spaced1{ margin-bottom: 0.5em; }
+.spaced2{ margin-bottom:1em; }
+/** These styles are replacements */
+.menubar{ font-size:0.75em; text-align:left; }
+
+.myBorder{ border:0.125em solid rgb(235,235,255); } 
+.myBorder1{ border: 1px solid grey; } 
+.myBorder2{ border: 1px solid black; }
+.myBorder3{ border:2px solid black; } 
+.myBorder4{ border:3px solid #EEEEEE; }
+/** syncronized with .sideContent */
+.myBorder5{ border:0.375em solid rgb(240,235,255); } 
+.myBorder6{ border:0.5em #CCDDEE solid; }
+
+.myBorderTop{ border-top:0.125em solid rgb(235,235,255); } 
+.floatRight{ float:right; }
+#progressBar{ border:0.0625em solid #00CC00; color:#00CC00; text-align:center; font-size:1em; text-decoration:blink; }
+#myMessage{ text-align:justify; font-size:1.0em; padding:0.25em; font-weight:600; }  
+.hideHandheld{ visibility:visible; }
+.boldRed{ color:#FF0000; font-weight:900; border:none; margin:0; padding:0 0.25em 0 0.25em; }
+.boldRed:hover{ color:#009900; } 
+.boldRed:active{ color:#990000; }
+.boldGreen{ color:#00FF00; font-weight:900; border:none; margin:0; padding:0 0.25em 0 0.25em; }
+.boldGreen:hover{ color:#990000; } 
+.boldGreen:active{ color:#009900; }
+.warningMessage{ color:#FF0000; font-size:0.875em; }
+.informationMessage{ color:#00FF00; font-size:0.875em; }
+.mySmaller{ font-size:smaller; }
+.myLarger{ font-size:larger; font-weight:bolder; }
+.header1Layout{ text-align:center; margin:0; border:0; padding:0.25em; font-size:0.8125em; color:white; background-color:rgb(140,135,155); }
+.header2Layout{ text-align:center; margin:0; border:0; padding:0.25em; font-size:0.8125em; color:white; background-color:rgb(160,155,175); }
+.header3Layout{ text-align:center; margin:0; border:0; padding:0.25em; font-size:0.8125em; color:white; background-color:rgb(110,135,155); }
+.header4Layout{ text-align:center; margin:0; border:0; padding:0.25em; font-size:0.8125em; color:white; background-color:#222222; }
+
+#pageData{ vertical-align:top; margin:1em; }    
+
+.centeredBlock{ display:block; vertical-align:middle; text-align:center; }
+.centeredContent{ vertical-align:middle; text-align:center; }
+.sideContentWidth { width:94%; } /** 196/208 94.2308% */ 
+.sideHeaderWidth{ width:97%; }
+.centerContentWidth { width:99%; }
+.contentBox { padding:0.25em; font-size:0.6875em; border-width:0 0.375em 0.375em 0.375em; border-style:solid; border-color:rgb(240,235,255); }
+.contentBox2 { padding:0.75em; font-size:0.75em; border-width:0 0.375em 0.375em 0.375em; border-style:solid; border-color:rgb(240,235,255); }
+/** 206/208 99.0385%*/ 
+/** NO LONGER USED */
+.sideContentBox2 { width:99%; margin: 0 0 0.6875em 0; font-size:0.6875em; 
+                  text-align:left; background-color:rgb(240,235,255); border:0.0625em solid #222222; 
+}
+/** @related_17 some web pages use this background-color */
+.sideContentBox_header{ width:100%; background-color:rgb(240,235,255);
+    margin-bottom:0.375em; font-weight:bold; text-align:center;
+}
+.strike{ text-decoration:line-through; }
+/** @related_1 - NO LONGER RELATED */
+.icon{ width:6.6875em; height:6.6875em; }
+.smallicon{ width:2em; height:2em; }
+.searchResultsRow{ display:inline-block; vertical-align:top; text-align:justify; }    
+#mailAll{ width:10%; height:16px; text-align:right; } 
+.searchMessage{ width:90%; height:16px; text-align:left; font-size:0.75em; color:#999999; }
+/** @related_18 Related to .contentBox above */
+.searchResult{ width: 100%; text-align:left; font-size:0.6875em; border:0.375em solid rgb(240,235,255); margin:0; padding:0; }
+.searchresultsMenu{ visibility:hidden; }
+#ajaxResults{ position:absolute; z-index:1; background:blue; height:0;}
+
+.borderless{ margin:0; border:0; padding:0; }
+
+.heading1{ font-weight:bold; height:1.5em; background-color: rgb(240,235,255); }
+
+.myBtnLayout{ color:#002244; font-weight:700; padding:0.25em 0.5em; text-align:center; 
+             background-color:rgb(200,210,220); border:1px outset rgb(200,210,220); } /** rgb(225,225,250)*/
+.myBtnLayout:hover { background-color:#DDFFEE; }
+.myBtnLayout:active { background-color:#FFDDEE; }
+.myBtn1Layout{ color:#fff; font-weight:700; text-align:center; padding:0.25em 0.5em; 
+    background-color:#5CCD00; border:1px outset #459A00; 
+}
+.myBtn1Layout:hover { background-color:#7EEF22; }
+.myBtn1Layout:active { background-color:#3AAB00; }
+.myBtn2Layout{ color:#DDEEFF; font-weight:500; text-align:center; padding:0.25em 0.5em; 
+  background-color:#222222; border:1px outset #459A00; 
+}
+.myBtn2Layout:hover { background-color:#7EEF22; }
+.myBtn2Layout:active { background-color:#3AAB00; }
+.plainBtnLayout{ color:black; text-align: center; padding:0.25em 0.5em; 
+    margin:0; background-color: white;
+}
+.plainBtnLayout:hover { background-color:#CCEECC; color:black; }
+.plainBtnLayout:active { background-color:#EECCCC; color:black; }
+
+.plainBtn0Layout{ text-align: center; }
+.plainBtn0Layout:hover { background-color:#CCEECC; }
+.plainBtn0Layout:active { background-color:#EECCCC; }
+
+.toggleBtnLayout{ color:red; background-color:white; font-weight:600; 
+text-align:center; margin:0; padding: 0.25em; }        
+.maxFontWeight{ font-weight:900; }
+#leftBox{ vertical-align:top; width:22%; float:left; }
+#centerBox{ vertical-align:top; width:78%; float:left; text-align:left; }  
+.largerIcon{ min-width:75px; min-height:75px; }
+.padded{ padding:0.5em; }
+
+.userImage{ width: 98%; height:auto; min-height:5em; }
+.noUserImage{ width:98%; height:auto; min-height:5em; padding:4em 0 3em 0; }
+
+.table0{ width:100%; text-align:left; }
+.table0 th{ font-size:0.85em; font-weight:bold; padding:0.5em; background-color:rgb(235,235,255); }
+.table0 td{ font-size:0.75em; vertical-align:top; padding:0.5em; border-width:0.1em; border-style:solid; border-color:rgb(235,235,255); }
+/** @related_14 */
+.tableDT{ width:30%; font-weight:bold; text-align:left;
+    margin:0.125em; padding:0.125em; border:0.125em; 
+}
+/** @related_14 b */
+.tableDD{ text-align:justify; text-indent:0.25em;
+    margin:0.125em; padding:0.125em; border:0.125em;
+}
+
+.dt1{ width:10%; height:1.5em; text-align:right; }
+.dd1{ width:90%; height:1.5em; text-align:left; }
+
+.listView0 ul li{ margin-bottom:0.5em; }
+
+.listViewX {  margin-bottom: 0.5em; }
+.listViewX ul{ margin:0; padding:0; list-style-type:none; }
+.listViewX ul li{ position:relative; }
+.listViewX ul li a{ display: block; overflow: auto; /*force hasLayout in IE7 */padding:0.25em; margin-bottom:0.25em; }
+
+.advert{ width:50%; text-align:left; background-repeat:no-repeat; }
+/** @related_15 */
+.captchaImage { width:15.625em; height:4.6875em; text-align:left; }
+.captchaInput{ height:1.5em; vertical-align:top; text-align:right; }
+.handWriting{ text-align:justify; font-family:Tahoma,Arial; font-size:1em; margin:1.25em; line-height:1.25em; }
+
+/** DROP DOWN MENU STYLES */
+.dropDownMenu{ margin:0; padding:0; border:0; text-align:left; }
+.dropDownMenu div{ position:absolute; visibility:hidden; margin:0; padding:0;}
+.dropDownMenu div a{ width:auto; white-space:nowrap; text-align:left;}
+
+.textstyle_0 { font-family: Gill, Helvetica, sans-serif; font-weight: 500; color: #9C0251; }  
+
+/** REPLACE SEARCH BOX */
+.hidden{ position:absolute; visibility:hidden; }  
+.wrapped{ word-wrapp:break-word; white-space:pre-line; }
+
+.topbannerMenu { background-color:#222222; }
+.topbannerMenu div{ background-color:#222222; }
+.topbannerMenu a{ width:100%; }
+.topbannerMenu div a{ width:100%; }
+
+.myMenu div{ background-color:rgb(240,235,255); z-index:2; }
+
+/**  COMMENT STYLES */
+#comments{ background-color:rgb(245,240,255); }
+#comment{ background-color:white; width:100%; margin:0.25em 0.25em 1em 0.25em; padding:0.25em; border:0.0625em solid #777777; }
+
+/** SIDE BAR MENU STYLES */
+/** rgb(110,135,155) */
+#sidebarmenu { font-size:0.75em; background-color:#222222; width:100%; }
+#sidebarmenu div{ position:relative; }
+/* Top level menu links style */
+#sidebarmenu div a{ display: block; overflow: auto; /*force hasLayout in IE7 */
+color:white; text-decoration:none; padding:0.125em; border:1px solid #000088; }
+#sidebarmenu div a:hover{ color:black; background-color:white; } 
+#sidebarmenu div a:active{ color:black; background-color:white; }
+/*Sub level menu items */
+#sidebarmenu div ul{ position: absolute; width: 188px; /*Sub Menu Items width */
+top: 0; visibility: hidden; background-color:#222222; 
+margin:0; border:0; padding:0; list-style-type:none; }
+#sidebarmenu div ul li a{ color:white; }
+#sidebarmenu div ul li a:hover{ color:black; background-color:rgb(240,235,255); }
+#sidebarmenu div ul li a:active{ color:black; background-color:rgb(240,235,255); }
+ 
+/* Holly Hack for IE \*/
+* html .sidebarmenu ul li { float: left; height: 1%; }
+* html .sidebarmenu ul li a { height: 1%; }
+/* End */
+
+

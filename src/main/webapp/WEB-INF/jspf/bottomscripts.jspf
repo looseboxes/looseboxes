@@ -1,0 +1,120 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%--
+Note: 
+When i used javascript to call a URL and use &amp; rather than & 
+in the URL below caused the parameters in the URL not to be returned 
+by HttpServletRequest.getParameters in the web app
+--%>
+<script type="text/javascript" src="${contextURL}/resources/default1.js"></script>
+
+<script type="text/javascript">
+  looseboxes.loadImage("${contextURL}/images/css_sprites.png", 786, 32);  
+</script>
+
+<c:if test="${myMessages != null || not empty myMessages}">
+  <script type="text/javascript"> 
+    looseboxes.setDisplay("myMessageDialog", "block");  
+  </script>
+</c:if>
+
+<%--    
+
+<c:if test="${!mobile}">
+  <script type="text/javascript">
+    // load side bar script see /WEB-INF/jspf/categories.jspf for the element id
+//    looseboxes.addLoadEvent(looseboxes.initsidebarmenu('sidebarmenu'));
+  </script>
+</c:if>  
+--%>
+<%-- https://developers.google.com/+/web/+1button/ --%>
+<script >  
+  window.___gcfg = {    
+    parsetags: 'onload'  
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<%-- https://developers.facebook.com/docs/plugins/like-button --%>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+var toggler = {
+    closetimer: 0,
+    previousId: null,
+    openExcl: function(elemId,keepRefererence) {
+        toggler.cancelclosetime();
+        toggler.closePrevious();
+        toggler.open(elemId, keepRefererence);
+    },
+    open: function(elemId,keepReference) {
+//window.alert("Opening: "+elemId);
+        if(keepReference) {
+            toggler.previousId = elemId;
+        }
+        looseboxes.setDisplay(elemId, 'block');
+    }, 
+    openTill: function(elemId,timeout) {
+        toggler.open(elemId, true);
+        toggler.closeAfter(elemId, timeout);
+    }, 
+    closeAfter: function(elemId, timeout) {
+//window.alert("Will close "+toggler.previousId+" after "+timeout+" millis.");
+        toggler.previousId = elemId;
+        window.setTimeout('toggler.closePrevious()', timeout);
+    }, 
+    closePrevious: function() {
+//window.alert("Closing previous: "+toggler.previousId);
+        if(toggler.previousId !== null) {
+            toggler.close(toggler.previousId);
+        }
+    },
+    close: function(elemId) {
+        looseboxes.setDisplay(elemId, 'none');
+    },
+    setclosetime: function (timeout) {
+        toggler.closetimer = window.setTimeout('toggler.closePrevious()', timeout);
+    },
+    cancelclosetime: function () {if(toggler.closetimer) {window.clearTimeout(toggler.closetimer);toggler.closetimer = null;}},
+    toggle: function(id, id2, collapseMode) {
+//window.alert("toggler#toggle. CollapseMode: "+collapseMode+", id1: "+id+", id2: "+id2);    
+        var ddmenu_item = looseboxes.$(id);
+        var ddmenu_ctrl = looseboxes.$(id2);
+//window.alert("toggler#toggle. item: "+ddmenu_item+", control: "+ddmenu_ctrl);    
+//window.alert("toggler#toggle. ControlNode.value: "+looseboxes.getNodeValue(ddmenu_ctrl));
+        var open = collapseMode ? 
+            (looseboxes.getNodeValue(ddmenu_ctrl) === '+' || ddmenu_item.style.display === 'none') :
+            (looseboxes.getNodeValue(ddmenu_ctrl) === '+' || ddmenu_item.style.visibility === 'hidden');
+//window.alert("toggler#toggle. Display: "+ddmenu_item.style.display+", visibility: "+ddmenu_item.style.visibility+", open: "+open);    
+        if(open) {
+            toggler.toggleopen(id, id2, collapseMode);
+        }else{
+            toggler.toggleclose(id, id2, collapseMode);
+        }
+    },
+    toggleopen: function(id, id2, collapseMode){
+        var ddmenu_item = looseboxes.$(id);
+        if(collapseMode) ddmenu_item.style.display = 'block';
+        ddmenu_item.style.visibility = 'visible';
+        var ddmenu_ctrl = looseboxes.$(id2);
+//window.alert("toggler#toggleopen. "+ddmenu_ctrl.innerHTML+", nodeValue: "+ddmenu_ctrl.nodeValue+", value: "+ddmenu_ctrl.value);    
+        looseboxes.setNodeValue(ddmenu_ctrl, '-');
+    },
+    toggleclose: function(id, id2, collapseMode){
+        var ddmenu_item = looseboxes.$(id);
+        if(collapseMode) ddmenu_item.style.display = 'none';
+        ddmenu_item.style.visibility = 'hidden';
+        var ddmenu_ctrl = looseboxes.$(id2);
+//window.alert("toggler#toggleclose. Menu ctrl: "+ddmenu_ctrl);        
+        looseboxes.setNodeValue(ddmenu_ctrl, '+');
+    }
+};
+</script>
+

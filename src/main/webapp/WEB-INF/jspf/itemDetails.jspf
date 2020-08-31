@@ -1,0 +1,262 @@
+<%@page pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+
+<%-- use the user's preferred locale, over the request's preferred locale --%>  
+<fmt:setLocale value="${User.locale}" scope="request"/>  
+
+<c:set var="itdPrice" value="${User.selectedItem.record.price}"/>
+<c:set var="itdDiscount" value="${User.selectedItem.record.discount}"/>
+
+<div itemscope itemtype="http://schema.org/${User.selectedItem.record.productcategoryid.itemtypeid.itemtype}" class="tableView0">
+  <c:if test="${User.selectedItem.selectedVariant != null}">
+    <div class="clearBoth"></div>
+<%--      
+    <div class="tableDT cellView">In stock</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.selectedVariant.quantityInStock} items</div>
+--%>
+    <c:if test="${User.selectedItem.available < 1}">
+      <div style="color:red">Item no longer available</div><br/>       
+    </c:if>  
+<%--@debug        
+    <div class="mySmaller">
+      Selected Item. In stock: ${User.selectedItem.selectedVariant.quantityInStock}, Available: ${User.selectedItem.available}
+    </div>    
+--%>
+  </c:if>
+  <c:if test="${User.selectedItem.record.productvariantList != null && not empty User.selectedItem.record.productvariantList}">
+<%-- The selected product variant --%>    
+    <c:if test="${User.selectedItem.selectedVariant.productSize != null || User.selectedItem.selectedVariant.color != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Selected <c:if test="${!mobile}">Item</c:if></div> 
+    <div class="tableDD cellView mySmaller">
+      <c:if test="${User.selectedItem.selectedVariant.color != null}">
+          
+        <loose:selectproductimage spiIncludeLogo="false" 
+                                  spiProduct="${User.selectedItem.record}" 
+                                  spiProductvariantId="${User.selectedItem.selectedVariant.productvariantid}"/>
+        <c:set var="itdSelectedImage" value="${selectedImage}"/>
+          
+        <c:if test="${itdSelectedImage != null && itdSelectedImage != ''}">
+            
+          <loose:getimagesrc imagePath="${itdSelectedImage}"/>  
+          
+          <img id="img${User.selectedItem.record.productid}" 
+               itemprop="image" class="smallicon" 
+               src="${getimagesrc_imageSrc}" 
+               alt="${User.selectedItem.record.productName}" 
+               title="${User.selectedItem.record.productName}"/>  
+        </c:if>
+      </c:if>
+      <c:if test="${User.selectedItem.selectedVariant.productSize != null}">
+        <span>${User.selectedItem.selectedVariant.productSize}</span>
+      </c:if>
+    </div>
+    <br/>
+    </c:if>    
+<%--@debug
+    <div class="clearBoth"></div>
+    <div class="mySmaller">
+      Size variants:<br/>
+      <c:forEach var="av" items="${User.selectedItem.sizeVariants}">
+        Color: ${av.color}, Size: ${av.productSize}<br/>    
+      </c:forEach>
+    </div>    
+    <div class="clearBoth"></div>
+    <div class="mySmaller">
+      Color variants:<br/>
+      <c:forEach var="av" items="${User.selectedItem.colorVariants}">
+        Color: ${av.color}, Size: ${av.productSize}<br/>    
+      </c:forEach>
+    </div>    
+--%>
+    <c:if test="${User.selectedItem.allAvailable > 1 &&
+                  ((User.selectedItem.sizeVariants != null && fn:length(User.selectedItem.sizeVariants) > 1) ||
+                  (User.selectedItem.colorVariants != null && fn:length(User.selectedItem.colorVariants) > 1))}">    
+      <div class="clearBoth"></div>
+      <div class="tableDT cellView">
+        <c:choose><c:when test="${mobile}">Others</c:when><c:otherwise>Other Options</c:otherwise></c:choose>
+      </div> 
+      
+      <c:url var="itdProductLink" value="${contextURL}/products/${User.selectedItem.record.productid}_${User.selectedItem.record.productName}.jsp"/>
+      
+      <form method="post" class="tableDD cellView" id="changeproductvariantselection" 
+            action="${itdProductLink}">
+        <div id="itdColorPane">
+            
+          <c:if test="${User.selectedItem.colorVariants != null && fn:length(User.selectedItem.colorVariants) > 1}">
+            
+            <label>Select color to see its sizes</label><br/>
+            
+            <c:forEach var="colorVariant" items="${User.selectedItem.colorVariants}">
+
+              <c:choose>
+                <c:when test="${colorVariant.productvariantid == User.selectedItem.selectedVariant.productvariantid}">
+                  <c:set var="itdChecked" value="true"/>
+                </c:when>
+                <c:otherwise>
+                  <c:set var="itdChecked" value="false"/>
+                </c:otherwise>
+              </c:choose>   
+
+              <loose:selectproductimage spiIncludeLogo="false" 
+                                        spiProduct="${User.selectedItem.record}" 
+                                        spiProductvariantId="${colorVariant.productvariantid}"/>
+              <c:set var="itdSelectedImage" value="${selectedImage}"/>
+
+              <span>
+                <input onmousedown="toggler.closePrevious(); return false;" 
+                       onclick="toggler.open('color${colorVariant.color}', true); return false;" 
+                       type="radio" id="color${colorVariant.color}id" name="color" value="${colorVariant.color}"/>
+                <a href="#" onmousedown="toggler.closePrevious(); return false;" 
+                   onclick="toggler.open('color${colorVariant.color}', true); looseboxes.$('color${colorVariant.color}id').click(); return false;">
+                    
+                  <loose:getimagesrc imagePath="${itdSelectedImage}"/>  
+
+                  <img id="cvi${colorVariant.productvariantid}" 
+                     itemprop="image" class="smallicon" 
+                     src="${getimagesrc_imageSrc}" 
+                     alt="${User.selectedItem.record.productName}" 
+                     title="${User.selectedItem.record.productName}"/>  
+                </a>    
+              </span>&emsp;  
+            </c:forEach>     
+            
+          </c:if>  
+        </div>
+        
+<%-- We group the sizes for each color together with id for each group of format 'color${color_value}' --%>        
+        <c:forEach var="itdColorVariant" items="${User.selectedItem.colorVariants}">
+          <c:if test="${itdColorVariant.color != User.selectedItem.selectedVariant.color}">
+            <c:set var="itdStyle" value="display:none"/>     
+          </c:if>  
+          <select name="productSize" id="color${itdColorVariant.color}" style="${itdStyle}">
+            <c:forEach var="itdSizeVariant" items="${User.selectedItem.sizeVariants}">
+              <c:choose>
+                <c:when test="${itdSizeVariant.color == itdColorVariant.color}">
+                  <option selected value="${itdSizeVariant.productSize}">${itdSizeVariant.productSize}</option>    
+                </c:when>      
+                <c:otherwise>
+                  <option value="${itdSizeVariant.productSize}">${itdSizeVariant.productSize}</option>    
+                </c:otherwise>
+              </c:choose>  
+            </c:forEach>
+          </select>
+        </c:forEach>
+        
+        <input class="plainBtnLayout" type="submit" value="Change Selection"/>
+      </form> 
+    </c:if>    
+  </c:if>
+
+  <div class="clearBoth"></div>
+  <div class="tone0"><b>Selected Item Details</b></div>
+  <br/>
+      
+<%-- First we display productId --%>      
+  <div class="clearBoth"></div>
+  <div class="tableDT cellView">ID</div> 
+  <div itemprop="productID" class="tableDD cellView"><b>${User.selectedItem.record.productid}</b></div>
+  <br/>
+<%-- Second we display productName --%>      
+  <div class="clearBoth"></div>
+  <div class="tableDT cellView">Name</div>
+  <div class="tableDD cellView mySmaller">${User.selectedItem.record.productName}</div>
+  <br/>
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<%-- Third we display price/and discount --%>      
+    <c:if test="${itdPrice != null}">
+      <div class="clearBoth"></div>
+      <div class="tableDT cellView">Price</div> 
+      <div itemprop="price" class="tableDD cellView">
+        <c:choose>
+          <c:when test="${itdDiscount == null || itdDiscount == '' || itdDiscount == '0'}">
+            <b><fmt:formatNumber maxFractionDigits="2" currencyCode="${User.currency.currencyCode}" value="${itdPrice}" type="currency"/></b>  
+          </c:when>  
+          <c:otherwise>
+            <span class="strike"><fmt:formatNumber maxFractionDigits="2" currencyCode="${User.currency.currencyCode}" value="${itdPrice}" type="currency"/></span>&nbsp;
+            <span class="boldRed"><fmt:formatNumber maxFractionDigits="2" currencyCode="${User.currency.currencyCode}" value="${itdPrice - itdDiscount}" type="currency"/></span>
+          </c:otherwise>
+        </c:choose>  
+      </div>
+      <br/>
+    </c:if>
+<%-- Fourth we display availability --%>      
+<%--@related_ItemAvailability--%>
+<%--
+    <c:if test="${User.selectedItem.record.availabilityid != null}">
+      <div class="clearBoth"></div>
+      <div class="tableDT cellView">Availability</div> 
+      <link class="tableDD cellView" itemprop="availability" 
+            href="http://schema.org/${User.selectedItem.record.availabilityid.availability}"/>
+          <b class="cellView">${User.selectedItem.record.availabilityid.availability}</b>
+      <br/>
+    </c:if>
+--%>
+  </div>    
+
+<%-- Last we display the remainder --%> 
+<%-- We use this font-size for now because 'myFontSize0' is not yet specified for mobile.css --%> 
+  <div style="font-size:0.75em">
+  <c:if test="${User.selectedItem.record.productsubcategoryid != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Sub category</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.productsubcategoryid.productsubcategory}</div>
+    <br/>
+  </c:if>
+  <c:if test="${User.selectedItem.record.brandid != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Brand</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.brandid.brandName}</div>
+    <br/>
+  </c:if>
+  <c:if test="${User.selectedItem.record.model != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Model</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.model}</div>
+    <br/>
+  </c:if>
+  <c:if test="${User.selectedItem.record.productstatusid != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Status</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.productstatusid.productstatus}</div>
+    <br/>
+  </c:if>
+  <c:if test="${User.selectedItem.record.dateOfManufacture != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Date of Manufacture</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.dateOfManufacture}</div>
+    <br/>
+  </c:if>
+  <div class="clearBoth"></div>
+  <div class="tableDT cellView">Minimum Order Quantity</div>
+  <div class="tableDD cellView mySmaller">${User.selectedItem.record.minimumOrderQuantity}</div>
+  <br/>
+  <c:if test="${User.selectedItem.record.validThrough != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Offer Valid Till</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.validThrough}</div>
+    <br/>
+  </c:if>
+  <div class="clearBoth"></div>
+  <div class="tableDT cellView">Views</div>
+  <div class="tableDD cellView mySmaller">${User.selectedItem.record.views} views</div>
+  <br/>
+  <c:if test="${User.selectedItem.record.keywords != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Keywords</div>
+    <div class="tableDD cellView mySmaller">${User.selectedItem.record.keywords}</div>
+    <br/>
+  </c:if>
+<%-- Last we display description --%>      
+  <c:if test="${User.selectedItem.record.description != null}">
+    <div class="clearBoth"></div>
+    <div class="tableDT cellView">Description</div>
+    <div itemprop="description" class="tableDD cellView mySmaller">${User.selectedItem.record.description}</div>
+  </c:if>
+  </div>
+</div>
+
+

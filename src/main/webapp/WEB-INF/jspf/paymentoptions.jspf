@@ -1,0 +1,6 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${User.paymentoptions != null && not empty User.paymentoptions}">
+  <%@include file="/WEB-INF/jspf/userpaymentoptions.jspf"%>          
+  <p class="myLarger"><b>Or</b></p>
+</c:if>            
+<%@include file="/WEB-INF/jspf/newpaymentoption.jspf"%>                      

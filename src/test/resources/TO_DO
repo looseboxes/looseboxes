@@ -1,0 +1,15 @@
+Shipping costs update
+Request password return 'Error sending password mail' 
+Error must be from authentication service
+
+A clicked link did not include the context path
+
+
+Apr 02, 2018 4:26:50 PM com.looseboxes.web.servlets.Search 
+WARNING: com.looseboxes.web.servlets.Search does not define an error page for this exception type hence exception will be re-thrown: java.lang.IllegalArgumentException: You have provided an instance of an incorrect PK class for this find operation.  Class expected : class java.lang.Short, Class received : class java.lang.String.
+Apr 02, 2018 4:27:07 PM com.looseboxes.web.servlets.Search 
+WARNING: com.looseboxes.web.servlets.Search does not define an error page for this exception type hence exception will be re-thrown: java.lang.IllegalArgumentException: You have provided an instance of an incorrect PK class for this find operation.  Class expected : class java.lang.Short, Class received : class java.lang.String.
+
+
+Apr 02, 2018 4:28:14 PM com.looseboxes.web.servlets.AjaxSearch 
+WARNING: java.lang.ClassCastException: com.bc.jpa.search.SingleSearchResult cannot be cast to java.lang.AutoCloseable

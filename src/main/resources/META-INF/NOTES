@@ -1,0 +1,10 @@
+Ecommerce database for opencart
+-------------------------------
+http://www.colab-aktiv.com/?page_id=25
+
+NOTES
+color is varchar (9)
+paymentCode char(16)
+ratingPercent smallint(4) unsigned null default null
+
+${contextURL}/products/298.jsp leads to /displayproduct?productid=298

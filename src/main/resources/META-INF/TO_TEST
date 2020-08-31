@@ -1,0 +1,7 @@
+Test com.looseboxes.web.components.Delivery and DeliveryGroup
+Test that Delivery.getDeliveryRate is converted to the correct currency
+
+
+Failed to execute goal org.apache.maven.plugins:maven-war-plugin:3.2.0:war (default-war) on project looseboxes: Failed to copy file for artifact [org.eclipse.persistence:eclipselink:jar:2.7.1:compile]: C:\Users\Josh\Documents\NetBeansProjects\looseboxes\target\looseboxes-1.0-SNAPSHOT\WEB-INF\lib\eclipselink-2.7.1.jar: The process cannot access the file because it is being used by another process. -> [Help 1]
+
+Failed to copy file for artifact [org.eclipse.persistence:eclipselink:jar: The process cannot access the file because it is being used by another process. -> [Help 1]

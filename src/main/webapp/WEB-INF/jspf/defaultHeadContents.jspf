@@ -1,0 +1,77 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/META-INF/tlds/cometdchat" prefix="cometdchat"%>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+
+<%@include file="/WEB-INF/jspf/detectMobileBrowserAndSetMobileAttribute.jspf"%>   
+
+<cometdchat:joinChat loginUserDisplayName="me" windowBackground="navy"/>
+
+<c:set var="reqURL">${pageContext.request.requestURL}</c:set>
+<c:if test="${baseURL == null}">
+    <c:set var="baseURL" value="${fn:substring(reqURL, 0, fn:length(reqURL) - fn:length(pageContext.request.requestURI))}" scope="application"/>
+</c:if>
+<c:if test="${contextURL == null}">
+    <c:set var="contextURL" value="${baseURL}${pageContext.request.contextPath}" scope="application"/>
+</c:if>
+<c:if test="${!App.productionMode}">
+<%-- This helps us access images on the remote server --%>    
+  <c:set var="localURL" value="http://www.buzzwears.com/local" scope="application"/>
+</c:if>
+
+<c:if test="${param.mobile != null}">
+  <c:set var="mobile" value="${param.mobile}" scope="session"/>  
+</c:if>
+
+<link rel="shortcut icon" href="${contextURL}/images/favicon.ico" />
+<link rel="icon" type="image/gif" href="${contextURL}/images/animated_favicon.gif" />
+<%--@todo link rel="alternate" type="application/rss+xml" title="RSS feed for ${productcategory}" 
+      href="${contextURL}/cat/${productcategory}/feeds/rss/${productcategory}.xml"/ --%>
+
+<%-- link href="${contextURL}/resources/normalize.css" rel="stylesheet" type="text/css"/ --%>
+<link href="${contextURL}/resources/css_sprites.css" rel="stylesheet" type="text/css"/>
+<c:choose>
+  <c:when test="${mobile}">
+    <link href="${contextURL}/resources/mobile_1.css" rel="stylesheet" type="text/css"/>
+  </c:when>  
+  <c:otherwise>
+    <link href="${contextURL}/resources/default_1.css" rel="stylesheet" type="text/css"/>
+    <%-- These are fancy styles we reserve for non-mobile media types --%>
+    <link href="${contextURL}/resources/plugin_styles.css" rel="stylesheet" type="text/css"/>
+  </c:otherwise>  
+</c:choose>
+<c:choose>
+  <c:when test="${!mobile}">
+    <style type="text/css">
+      #pageData{ vertical-align:top; margin:0.5em; }    
+      .buzz0{ background-color:#ffdede; color:#333; }
+      .leftColumnWidth{ width:300px; }
+<%--      
+      DON'T REMOVE THESE 
+      When I remove map_canvas from here and put it in the .css file, the map was rendered colllapsed 
+      overflow:scroll in css file caused the map_canvas to be rendered collasped 
+--%>
+/** overflow:scroll caused the map_canvas to be rendered collasped */
+      #map_canvas{ min-height:25em; overflow:visible; z-index:-1; }  
+      #mapview{ width:25em; color:black; text-align:center; }
+      #gplusoneDiv{ overflow:hidden; width:70px; float:left; }
+    </style>  
+  </c:when>  
+  <c:otherwise>
+    <style type="text/css">
+      .buzz0{ background-color:#ffdede; color:#333; }
+      .leftColumnWidth{ width:100%; }
+<%--      
+      DON'T REMOVE THESE 
+      When I remove map_canvas from here and put it in the .css file, the map was rendered colllapsed 
+      overflow:scroll in css file caused the map_canvas to be rendered collasped 
+--%>
+      #map_canvas{ height:16em; overflow:visible; z-index:-1; }  
+      #mapview{ width:16em; color:black; text-align:center; }
+      #gplusoneDiv{ overflow:hidden; width:70px; float:left; }
+    </style>  
+  </c:otherwise>  
+</c:choose>  

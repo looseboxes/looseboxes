@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <ul>
+    <li>
+      <p>
+        Use the <tt>search box</tt> at the top of each ${siteName} web page to 
+        find items. To do this: Enter the word or phrase or Product ID concerning
+        the item you are looking for in the search box at the center of the web page. 
+      </p>
+      <b>For Example: </b> Enter the phrase <tt>girls top</tt> OR the Product ID <tt>289</tt>
+    </li>    
+    <li>
+      Use the <tt>Quick Links</tt> provided either at the left or at the bottom
+      <tt>(for mobile browsers)</tt> of the page to find items.
+    </li>
+  </ul>  
+</root>

@@ -1,0 +1,25 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+
+<c:choose>
+  <c:when test="${User.selectedItem.thirdParty}">
+    <button onclick="window.location='${User.selectedItem.sourceUrl}'"
+      class="plainBtnLayout" type="button" title="Go to website where item was published">
+      <span class="boldGreen myFontSize1b">&nbsp;</span>
+      Go to Site
+    </button>
+  </c:when>
+  <c:otherwise>
+    <c:if test="${!mobile}">
+      <button onclick="window.location='#contactUser'"
+        onmouseover="myDropDownMenu.closePrevious(); myDropDownMenu.open('contactUser', true)"      
+        class="plainBtnLayout" type="button" title="Contact seller">
+        <span class="boldGreen myFontSize1b">&nbsp;</span>
+        Contact Seller
+      </button>
+    </c:if>  
+  </c:otherwise>
+</c:choose>  
+
+<%@include file="/WEB-INF/jspf/cartoptions.jspf"%>

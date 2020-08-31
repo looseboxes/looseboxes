@@ -1,0 +1,29 @@
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<loose:loginform 
+    displayForgotPasswordLink="true" 
+    displayRemembermeCheckbox="true"
+    displayLoginBySocial="false"
+    formClass="form0 width1 background0 spaced1" 
+    formInputClass="noclass"/>
+<c:choose>
+  <c:when test="${mobile}"><c:set var="mDropDown" value="false"/></c:when>  
+  <c:otherwise><c:set var="mDropDown" value="true"/></c:otherwise>  
+</c:choose>
+<div>
+  <loose:learnmore nodeClass="background0 width1 spaced1" useDropDownMenu="${mDropDown}"/>
+  <loose:dropdownmenu nodeLink="/user/join.jsp" dropDownMenuClass="" 
+  nodeClass="background0 width1" dropDownMenuId="joinoptionDropDownMenuId"  
+  nodeText="Join Here" useDropDownMenu="${mDropDown}">
+    <loose:joinform 
+        displayConfirmPassword="true"
+        displayPassword="true"
+        displayLearnMore="false"
+        displayJoinBySocial="false" 
+        formClass="form0 width1 background0" 
+        formInputClass="noclass"/>
+  </loose:dropdownmenu>    
+</div>
+
+

@@ -1,0 +1,21 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="/errorpages/errorpage.jsp"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<loose:page>
+  <jsp:attribute trim="true" name="pageTitle">${siteName} - User Pages Index</jsp:attribute> 
+  <jsp:attribute trim="true" name="pageHeadInclude"> 
+    <meta name="keywords" content="${siteName} list of user pages index "/>  
+  </jsp:attribute> 
+  <jsp:body>
+  <div>
+    <b><a href="${context}/user/index.jsp">User Index</a></b>
+    <ul>
+      <li><a href="${context}/user/join.jsp">Join <i>${siteName}</i></a></li>
+      <li><a href="${context}/user/login.jsp">Login Page</a></li>
+      <li><a href="${context}/userUploads">User Uploads</a><span class="mySmaller"> (You must be logged in to view this page)</span></li>
+      <li><a href="${context}/user/promo.jsp"><i>${siteName}</i> promo</a></li>
+      <li><a href="${context}/user/yardSales.jsp"><i>${siteName}</i> yard sales</a></li>
+      <li><a href="${context}/user/requestPassword.jsp">Request Password</a></li>
+    </ul>
+  </div>
+  </jsp:body>
+</loose:page>   

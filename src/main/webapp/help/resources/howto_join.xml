@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <ul>
+    <li>
+      <strong>Click the <em>join</em> link</strong> found at the top of all 
+      ${siteName} web pages. A form will be displayed. 
+    </li>  
+    <li>
+      <strong>Fill in the necessary details</strong>,    
+      (only details marked with a red asterisk &lsquo;<font style="color:red">*</font>&rsquo;&nbsp;are mandatory)
+      then click the next button. 
+    </li>
+    <li>
+      <strong>A confirmation page will appear</strong> displaying the details you entered. You may 
+      return to the form by clicking the <tt>back</tt> button.
+    </li>
+    <li>
+      <strong>Click the <tt>submit</tt> button</strong> and presto you are 
+      registered with ${siteName}! Shortly after registration an email will be 
+      sent to you with a link which will enable you activate your ${siteName} account.
+      <p>
+        If you can't find the email in your <tt>inbox</tt>, check the <tt>spam folder</tt>  
+      </p>
+    </li>
+  </ul>  
+</root>

@@ -1,0 +1,28 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${productsubcategories == null}">
+  <jsp:useBean scope="page" id="SubcatSelector" class="com.looseboxes.web.components.SelectorBean">    
+    <jsp:setProperty name="SubcatSelector" property="tableName" value="productsubcategory"/>    
+    <jsp:setProperty name="SubcatSelector" property="columnName" value="productcategory"/>
+    <jsp:setProperty name="SubcatSelector" property="columnValue" value="${productcategory}"/>
+    <jsp:setProperty name="SubcatSelector" property="request" value="<%=request%>"/>
+  </jsp:useBean>    
+  <c:set scope="application" var="productsubcategories" value="${SubcatSelector.resultList}"/>
+</c:if>
+<div class="buzz0">
+    <c:choose>
+        <c:when test="${mobile}">
+            <%@include file="/WEB-INF/jspf/socialbox.jspf"%>
+            <div>
+                <%@include file="/WEB-INF/jspf/infoBox.jspf"%>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <table class="fullWidth">
+                <tr>
+                    <td class="leftColumnWidth"><%@include file="/WEB-INF/jspf/socialbox.jspf"%></td>
+                    <td style="padding:0.25em;"><%@include file="/WEB-INF/jspf/infoBox.jspf"%></td>
+                </tr>
+            </table>
+        </c:otherwise>
+    </c:choose>
+</div>

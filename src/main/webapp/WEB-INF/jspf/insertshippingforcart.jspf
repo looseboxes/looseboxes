@@ -1,0 +1,14 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="http://forms.looseboxes.com/jsp/jstl/bcwebform" prefix="bwf"%>
+<%-- 
+A DbAction which will be accessed via its Id, should have a unique name and thus
+would be unique across a session. Hence we give this a session scope.
+--%>
+<jsp:useBean id="InsertAddress" class="com.looseboxes.web.components.forms.InsertAddressForm" scope="session">
+  <jsp:setProperty name="InsertAddress" property="stage" value="1"/>    
+  <jsp:setProperty name="InsertAddress" property="request" value="<%=request%>"/>    
+</jsp:useBean>
+
+<p><b>Street Address</b> must be provided</p>  
+<bwf:form formBean="${InsertAddress}"/>

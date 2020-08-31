@@ -1,0 +1,12 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:useBean id="User" class="com.looseboxes.web.components.UserBean" scope="session"/>
+  <p>You will be notified at various stages of the delivery process. 
+      You may also check the delivery status any time. 
+  </p>
+  <c:if test="${User.shoppingCart.shippingDetailsNeeded}">
+    <p><b>You have not provided shipping details.</b></p>
+    <p>
+      <a href="${contextURL}/insertShipping?orderId=${User.shoppingCart.orderId}">Click here</a> 
+      to provide shipping details
+    </p>
+  </c:if>

@@ -1,0 +1,16 @@
+#searchBoxSelect{ height:1.2em; } 
+#searchBoxTextInput{ height:1.2em; width:10em; }
+#searchBoxSubmitButton{ height:1.2em; color:#002244; font-weight:700; text-align:center; padding:0.15em; 
+             background-color:rgb(200,210,220); border:1px outset rgb(200,210,220); } /** rgb(225,225,250)*/
+#searchBoxSubmitButton:hover { background-color:#DDFFEE; }
+#searchBoxSubmitButton:active { background-color:#FFDDEE; }
+
+/** MOBILE */
+
+#searchBoxSelect{ min-width:95%; }  
+#searchBoxTextInput{ min-width:75%; }
+#searchBoxSubmitButton{ min-width:19%; color:#002244; font-weight:700; text-align:center; padding:0.15em;  
+             background-color:rgb(200,210,220); border:1px outset rgb(200,210,220); } /** rgb(225,225,250)*/
+#searchBoxSubmitButton:hover { background-color:#DDFFEE; }
+#searchBoxSubmitButton:active { background-color:#FFDDEE; }
+

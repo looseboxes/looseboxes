@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div itemscope itemtype="http://schema.org/Organization">
+    <strong itemprop="name">${siteName}.com</strong>
+    <br/><br/>
+    <strong>Email:</strong><br/>
+    <a itemprop="email" href="mailto:support@buzzwears.com">support@buzzwears.com</a>
+    <br/><br/>
+    <strong>Phone:</strong><br/>
+    <span itemprop="telephone">+234 80 9292 5682</span> 
+    <br/><br/>
+    <strong>Local Address:</strong>
+    <div itemscope itemtype="http://schema.org/PostalAddress"> 
+      <span itemprop="name">Nurox Ltd</span>&nbsp; 
+      <span itemprop="postalCode">900231</span>&nbsp; 
+      <span itemprop="addressRegion">Abuja</span>&nbsp; 
+      <span itemprop="addressCountry">Nigeria</span>
+    </div>
+  </div>  
+  <br/>
+  <div itemscope itemtype="http://schema.org/Organization">
+    ${siteName}.com is a subsidiary of&nbsp;
+    <span itemprop="name">NUROX Ltd</span><br/>
+    <a href="${contextURL}/info/about_nuroxltd.jsp">Click here</a>
+    for more information about NUROX Ltd.
+  </div>
+</root>

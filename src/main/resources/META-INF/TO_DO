@@ -1,0 +1,104 @@
+TO DO
+-----
+https://developers.facebook.com/quickstarts/1705255026405225/?platform=web
+
+* What happens to shopping cart after payment
+* UpdateProductAvailability should make unavailable available when necessary
+* Shopping Cart item details should be collapsed if items > 3
+* Admin - sendActivationMail, activate account etc
+* Top right - add username
+* Uncomment Oauth logic in Ajax servlet
+ServletUtil.appendContextQuery doesn't append context
+
+Contact seller
+Comments
+Make BaseFilter implement HasMessages
+Validators don't seem effective
+See if json-simple lib can replace restfb JsonObject in Oauth servlet
+Read for chat http://www.developershome.com/wap/xhtmlmp/xhtml_mp_tutorial.asp?page=metadata3 
+Add rivers and ensure states enum etc well used
+Username validator couldn't detect duplicates
+CashOnDelivery (Abuja Only)
+Create image for buzzwears, favion and .ico, change images on payment portal, Change logos and icons, icos
+Get images for siteusers
+Add feedlistpage and implement RSS ?? any need
+sync scripts dropDownMenu and toggler http://stackoverflow.com/questions/368280/javascript-hashmap-equivalent
+move classes in mail folder to looseboxescore
+appName in app.properties and siteName in web.xml
+
+After transfers
+---------------
+Relocate Tranfer and TransferManager to Test Packages
+Remove library loosedb and manager 
+
+Backup displayformfield.tag to aaa_displayformfield_old.tag and use divs with clearboth instead of table
+
+Create a proper SelectorBean to extends JPQLImpl
+
+Remove all loose:util and loose:dbUtil
+
+Bring in myorders.tag and work on orders.jsp ie. components.UserOrders, components.SellerOrders
+
+joinform.tag, loginform.tag, learmore.tag, oauthForm.tag, oauthFormElement.tag
+All jsps in /user folder
+
+Display (delivery not available/only in stores) for items for which weight is not specified
+
+A user should not be able to order outOfStock or moved items
+When an order is placed, change quantity in stock
+Once quantity in stock reaches 0 change availability
+
+Look for all uses of CurrencyFormatter... and decide if we need to use it
+
+tags/page1.tag, tags/page2.tag tags/errorpage.tag
+
+Delivery.getDeliveryRate is no longer formatted from display locale to user locale in code... do it in web page
+
+Search for all .key and .value in web pages and consider that most Maps are now entities
+
+All the jsps in /messaging, /notices and /paymentresponse need working on
+
+On installation let the user select a default currency,language,timeZone etc
+
+Servlets
+--------
+/search 
+/displayproduct?id=
+
+User.locale - NGN not being recognized
+
+EntityControllerBase.getValue vs DatabaseObjects.getValue etc e.g setValue on both
+WebApp.getInstance().getListings(); should take in a class and a productcategory
+Take note of the resolution of methodnames, columnames, fieldnames etc
+
+if productcategory is null then return all listings
+Sync ListingsBean and SubcategoryBean
+
+/admin -remoteAdmin, requestTests
+/search - product, comment, user, yardsales, community
+/details - product, comment, user, yardsales, community
+/display - image, 
+/auth - login, logout, signup
+/manage/user - activateuser, 
+/manage/yardsales
+
+
+Admin
+/admin, /remoteAdmin, /requestTests 
+
+Guest
+/gx, /respondtoux, /displayProduct, /dp, /search, /changeProductTable, /switch, /cpt, /mailReceiver, /akvux, /insight, 
+/viewimg, /viewcty, /convcurr, /akvys, /searchux, /login, /reqpwd, /nsr, /reggx, /mail, /join, /sendmail, /tosendmail,
+/searchcty, /joincty, /exitcty, /oauth, /searchuxcty, /searchYardsales, /viewYardsales, /nssr, /ufml, /tempadmin
+
+User
+/ux, /contactux, /postOrderHandler, /poh, /changeProfilePicture, /cpp, /Uploadfiles, /submitComplaint, /chat,
+/registerYardsales, /uploadtext, /insertcty, /editcty, /deletecty, /shoppingCart, /cart, /checkout,
+/insertShipping, /addShippingToCart, /addshipping, /toggleExpressDelivery, /ted, /form, /postcomment, 
+/validate, /update, /logout, /uxuploads, /editProduct, /edit, /deleteProduct, /delete, /cancelUpdate, /cancel,
+/editux, /deleteux, /insertProduct, /insert
+
+Controller
+/ux, /gx, /insight, /mailReceiver, /switch, /displayProduct, /search, /admin
+
+Fb like chat: http://www.javacodegeeks.com/2012/10/cometd-facebook-similar-chat-for-your.html

@@ -1,0 +1,52 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="/WEB-INF/tlds/bcsocial" prefix="social"%>
+
+<%-- @currentRowItem --%>
+<jsp:useBean id="currentRowItem" class="com.looseboxes.pu.entities.Product" scope="request"/>    
+
+<div itemscope itemtype="http://schema.org/${currentRowItem.productcategoryid.itemtypeid.itemtype}">
+
+  <loose:selectproductimage spiIncludeLogo="true" spiProduct="${currentRowItem}"/>
+  <c:set var="imageSrc" value="${selectedImage}"/>          
+    
+  <c:if test="${imageSrc != null}">
+    <loose:displayrecordicon displayImageInLink="true" product="${currentRowItem}"
+                             noImageClass="centeredBlock srNoImage borderless"
+                             imageClass="largerIcon srImage borderless"/>    
+  </c:if>
+  
+    <span class="srDescription" itemprop="description">
+        <loose:itemSummary 
+            isAvailability="${currentRowItem.availabilityid.availability == 'InStock' ? null : currentRowItem.availabilityid.availability}" 
+            isDiscount="${currentRowItem.discount}" 
+            isPrice="${currentRowItem.price}" 
+            isProductName="${currentRowItem.productName}" 
+            isSeparator="<br/>"/>
+    </span> 
+    
+    <span class="mySmaller">${currentRowItem.views} views</span>
+    &emsp;
+    <a itemprop="url" href="${contextURL}/products/${currentRowItem.productid}_<%=java.net.URLEncoder.encode(currentRowItem.getProductName(), "utf-8")%>.jsp">more</a>
+
+<%--  
+  <input type="button" value="+" class="toggleBtnLayout floatRight myBorder" id="control${currentRowItem.id}"
+  onmousedown="return myDropDownMenu.toggle('ddm3${currentRowItem.id}', 'control${currentRowItem.id}', false)"/>
+--%>
+
+  <input id="ddm3control${currentRowItem.productid}" type="button" value="+" 
+         class="myFontSize1b boldRed curvedTop toggleBtnLayout borderless" 
+         onclick="myDropDownMenu.toggle('ddm3${currentRowItem.productid}', 'ddm3control${currentRowItem.productid}', false)"/>
+  
+  &nbsp;
+  <span class="floatRight myBorder1" style="padding:0.5em;">${currentRowItem.productid}</span> 
+  <%--
+  &nbsp;
+  <span id="ddm3${currentRowItem.productid}" class="hidden">
+    <social:socialshare ssItemRecord="${currentRowItem}" ssOwnerEmail="${currentRowItem.seller.emailAddress}"/>  
+  </span>
+  --%>
+</div> 
+

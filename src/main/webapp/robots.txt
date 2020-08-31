@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /META-INF
+Disallow: /WEB-INF
+Disallow: /admin
+Disallow: /ajax
+Disallow: /captcha
+
+
+
+
+
+
+
+

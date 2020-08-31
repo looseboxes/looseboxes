@@ -1,0 +1,23 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
+<c:choose>
+  <c:when test="${fn:length(ShoppingCart.items) == 1}">
+    <c:set var="mProceed" value="Pay For Item"/>
+  </c:when>      
+  <c:otherwise>
+    <c:set var="mProceed" value="Pay For Items"/>  
+  </c:otherwise>
+</c:choose>    
+
+<input type="submit" class="myBtnLayout" value="${mProceed}"/>    
+
+<c:if test="${User.customerServiceLoggedInToChat}">
+  <button onclick="window.location='${contextURL}/quickchat?type=cs'" 
+          class="plainBtnLayout" title="Chat with us">
+    <img class="liveChat3Img" src="${contextURL}/images/transparent.gif" alt="chat"/> 
+    <strong>Chat with us</strong>
+  </button>
+</c:if>
+  

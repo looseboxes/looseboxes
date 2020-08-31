@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div class="listView0">
+    <b><a href="${contextURL}/info/index.jsp">Information Index</a></b><br/>
+    <ul>
+      <li><a href="${contextURL}/info/about.jsp">About <b>${siteName}</b></a></li>
+      <li><a href="${contextURL}/info/why_us.jsp">Why <b>${siteName}</b></a></li>
+      <li><a href="${contextURL}/info/sitemap.jsp">Site Map</a></li>
+      <li><a href="${contextURL}/info/buyerProtection.jsp">Buyer Protection</a></li>
+      <li><a href="${contextURL}/info/about_nuroxltd.jsp">About Nurox Ltd</a></li>
+      <li><a href="${contextURL}/info/update_shippingdetails.jsp">About Updating Shipping Details (Sellers)</a></li>
+      <li><a href="${contextURL}/info/about_nuroxltd.jsp">About NUROX Ltd</a></li>
+      <li><a href="${contextURL}/info/contact_us.jsp">Contact Us</a></li>
+      <li><a href="${contextURL}/info/contact_nuroxltd.jsp">Contact NUROX Ltd</a></li>
+    </ul>
+  </div>
+</root>

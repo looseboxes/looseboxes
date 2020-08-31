@@ -1,0 +1,15 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<small class="myFontSize0">
+  <c:choose>
+    <c:when test="${!mobile}">
+      Pay on Delivery&emsp;<i>(only in Kaduna, Nigeria)</i>&emsp;Call Helen: 080 9292 5682
+    </c:when>
+    <c:otherwise>
+      <small>
+        Pay on Delivery <i><small>(only Kaduna, Nigeria)</small></i>
+        <br/>
+        Call Helen: 080 9292 5682
+      </small>
+    </c:otherwise>
+  </c:choose>
+</small>   

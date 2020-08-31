@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div class="listView0">
+    <b><a href="${contextURL}/articles/index.jsp">Articles Index</a></b><br/>
+    <ul>
+      <li><a href="${contextURL}/articles/howto_use/index.jsp">How to use <b>${siteName}</b></a></li>
+      <li><a href="${contextURL}/articles/my_beloved_clutter.jsp">My Beloved Clutter: Letting go of junk household items</a></li>
+      <li>
+        <a href="${contextURL}/cat/${productcategory}/articles/index.jsp">Articles about ${productcategory}</a>
+        <br/><br/>
+        <loose:articleslist/>
+      </li>
+    </ul>
+  </div>
+</root>

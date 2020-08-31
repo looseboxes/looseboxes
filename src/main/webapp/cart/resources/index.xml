@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div class="listView0">
+    <b><a href="${contextURL}/help/index_page.jsp">Shopping Cart Index</a></b><br/>
+    <ul>
+      <li><a href="${contextURL}/cart/index.jsp">View Shopping Cart</a></li>
+      <li><a href="${contextURL}/cart/deliveryrates.jsp">Delivery Rates</a></li>
+    </ul>
+  </div>
+</root>

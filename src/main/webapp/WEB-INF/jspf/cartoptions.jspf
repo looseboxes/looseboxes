@@ -1,0 +1,33 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+
+<c:if test="${User.selectedItem.canBeAddedToShoppingCart}">
+  <button onclick="window.location='${contextURL}/cart?action=add&vid=${User.selectedItem.selectedVariant.productvariantid}'"
+    class="plainBtnLayout" type="button" title="Add this item to your shopping cart">
+<%-- 'mobile' doesn't have 'Buy Now' and 'Add' is not specific enough so we use 'Buy' --%>      
+    <span class="boldGreen myFontSize1b">+</span>
+    <c:choose><c:when test="${mobile}">Buy</c:when><c:otherwise>Add to Cart</c:otherwise></c:choose>
+  </button>
+    
+  <c:if test="${!mobile && User.loggedIn && !User.shoppingCart.shippingDetailsNeeded 
+              && User.paymentoptions != null && fn:length(User.paymentoptions) > 0}">
+    <button onclick="window.location='${contextURL}/cart?action=buynow&vid=${User.selectedItem.selectedVariant.productvariantid}'"
+      class="plainBtnLayout" type="button" title="Buy this item now">
+        <span class="boldGreen myFontSize1b">&check;</span>
+        Buy Now
+    </button>
+  </c:if>
+</c:if>
+<c:if test="${User.selectedItemInShoppingCart}">
+  
+  <button onclick="window.location='${contextURL}/cart?action=remove&vid=${User.selectedItem.selectedVariant.productvariantid}'"
+    class="plainBtnLayout" type="button" title="Remove this item from your shopping cart">
+      <span class="boldGreen myFontSize1b">x</span>
+      <c:choose>
+        <c:when test="${mobile}">Remove</c:when>
+        <c:otherwise>Remove from Cart</c:otherwise>
+      </c:choose>
+  </button>
+</c:if>
+    

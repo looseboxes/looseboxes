@@ -1,0 +1,64 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%@taglib uri="/WEB-INF/tlds/bcsocial" prefix="social"%>
+
+<c:choose>
+  <c:when test="${mobile}">
+    <c:set var="mSpanClass" value="plainBtnLayout myBorder4"/>
+  </c:when>  
+  <c:otherwise>
+    <c:set var="mSpanClass" value="plainBtnLayout myBorder4"/>
+  </c:otherwise>
+</c:choose>    
+
+<social:socialshare  
+ssItemRecord="${User.selectedItem.record}" 
+ssLargeIcons="true" 
+ssOwnerEmail="${User.selectedItem.seller.emailAddress}"/>  
+
+&emsp;
+
+<c:choose>
+  <c:when test="${User.selectedItem.thirdParty}">
+    <button onclick="window.location='${User.selectedItem.sourceUrl}'"
+      class="plainBtnLayout" type="button" title="Go to website where item was published">
+      Go to Site
+    </button>
+  </c:when>
+  <c:otherwise>
+    <c:if test="${!mobile}">
+      <button onclick="window.location='#contactUser'"
+        onmouseover="myDropDownMenu.closePrevious(); myDropDownMenu.open('contactUser', true)"      
+        class="plainBtnLayout" type="button" title="Contact seller">
+        Contact Seller
+      </button>
+    </c:if>  
+  </c:otherwise>
+</c:choose>  
+
+<c:if test="${User.selectedItem.canBeAddedToShoppingCart}">
+  <button onclick="window.location='${contextURL}/cart?action=add&vid=${User.selectedItem.selectedVariant.productvariantid}'"
+    class="plainBtnLayout" type="button" title="Add this item to your shopping cart">
+    <img class="addToCartImg" src="${contextURL}/images/transparent.gif" alt="add to cart" title="add to shopping cart"/>  
+<%-- 'mobile' doesn't have 'Buy Now' and 'Add' is not specific enough so we use 'Buy' --%>      
+    <c:choose><c:when test="${mobile}">Buy</c:when><c:otherwise>Add to Cart</c:otherwise></c:choose>
+  </button>
+    
+  <c:if test="${!mobile && User.loggedIn && !User.shoppingCart.shippingDetailsNeeded 
+              && User.paymentoptions != null && fn:length(User.paymentoptions) > 0}">
+    <button onclick="window.location='${contextURL}/cart?action=buynow&vid=${User.selectedItem.selectedVariant.productvariantid}'"
+      class="plainBtnLayout" type="button" title="Buy this item now">
+        <img class="cart2Img" src="${contextURL}/images/transparent.gif" alt="Buy Now" title="buy this item now"/>  
+        Buy Now
+    </button>
+  </c:if>
+</c:if>
+<c:if test="${User.selectedItemInShoppingCart}">
+  <button onclick="window.location='${contextURL}/cart?action=remove&vid=${User.selectedItem.selectedVariant.productvariantid}'"
+    class="plainBtnLayout" type="button" title="Remove this item from your shopping cart">
+      <img class="removeFromCartImg" src="${contextURL}/images/transparent.gif" alt="remove from cart" title="remove from shopping cart"/>  
+      <c:choose><c:when test="${mobile}">Remove</c:when><c:otherwise>Remove from Cart</c:otherwise></c:choose>
+  </button>
+</c:if>
+    

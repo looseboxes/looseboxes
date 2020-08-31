@@ -1,0 +1,33 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="/errorpages/errorpage.jsp"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<loose:page>
+  <jsp:attribute trim="true" name="pageTitle">${siteName} - Sitemap</jsp:attribute> 
+  <jsp:attribute trim="true" name="pageHeadInclude"> 
+    <meta name="keywords" content="${siteName} sitemap, list of pages, info pages, help pages, articles, texts, feeds, user pages, legal pages"/>
+  </jsp:attribute> 
+  <jsp:body>
+    <loose:menucontent contentClass="contentBox2" contentId="aboutLooseBoxes" display="true" 
+    titleClass="header1Layout curvedTop headerWidthFull" title="${siteName} Site Map" titleId="aboutLooseBoxesHeader">
+        <div>
+          <ul>
+            <li><a href="${context}/index.jsp">Home page</a></li>
+            <li><a href="${context}/welcome.jsp">Welcome page</a></li>
+            <li><a href="${context}/search.jsp">Search page</a></li>
+          </ul>
+        </div>
+        <%@include file="/info/index.jsp"%><br/>
+        <%@include file="/help/index.jsp"%><br/> 
+        <%@include file="/texts/index.jsp"%><br/>
+        <%@include file="/games/index.jsp"%><br/>
+        <%@include file="/articles/index.jsp"%><br/>
+        <%@include file="/feeds/rss/index.jsp"%><br/>
+        <div>
+          <ul>
+            <li><a href="${context}/mail/index.jsp">Mail</a></li>
+          </ul>
+        </div>
+        <%@include file="/user/index.jsp"%><br/>
+        <%@include file="/legal/index.jsp"%>
+    </loose:menucontent>    
+  </jsp:body>
+</loose:page>    

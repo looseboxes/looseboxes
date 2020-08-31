@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div class="listView0">
+    <b><a href="${contextURL}/help/index.jsp">Help Index</a></b><br/>
+    <ul>
+      <li><a href="${contextURL}/help/FAQs.jsp">Frequently asked questions</a></li>
+      <li><a href="${contextURL}/help/tips_and_tricks.jsp">Tips and Tricks</a></li>
+      <li><a href="${contextURL}/help/requestPassword.jsp">Forgot Password</a></li>
+    </ul>
+  </div>
+</root>

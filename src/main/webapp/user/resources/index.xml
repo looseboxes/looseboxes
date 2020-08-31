@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div class="listView0">
+    <b><a href="${contextURL}/user/index.jsp">User Index</a></b><br/>
+    <ul>
+      <li><a href="${contextURL}/user/join.jsp">Join <i>${siteName}</i></a></li>
+      <li><a href="${contextURL}/user/login.jsp">Sign in Page</a></li>
+      <li><a href="${contextURL}/user/uploadProfilePicture.jsp">Edit Profile Picture</a><span class="mySmaller"> (You must be logged in to view this page)</span></li>
+      <li><a href="${contextURL}/editux">Edit Profile</a><span class="mySmaller"> (You must be logged in to view this page)</span></li>
+      <li><a href="${contextURL}/uxuploads">View My Uploads</a><span class="mySmaller"> (You must be logged in to view this page)</span></li>
+      <li><a href="${contextURL}/user/requestPassword.jsp">Request Password</a></li>
+      <li><a href="${contextURL}/user/promo.jsp"><i>${siteName}</i> promo</a></li>
+    </ul>
+  </div>
+</root>

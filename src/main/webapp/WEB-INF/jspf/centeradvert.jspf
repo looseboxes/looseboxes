@@ -1,0 +1,33 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+<%-- <c:if test="${!mobile}"> --%>
+<c:if test="${1 != 1}">    
+<div class="spaced2"></div>   
+<!--div class="myBorder5"--> 
+<div> 
+  <div class="myFontSize1 borderless" style="font-family: Gill, Helvetica, sans-serif; font-size: 1.2em; font-weight: 500; text-align: justify; color: #990000">
+      <c:choose>
+        <c:when test="${1 == 1}">
+          You can't get our quality of kids fashion cheaper elsewhere!
+        </c:when>    
+        <c:otherwise>
+          <c:choose>
+            <c:when test="${User.loggedIn}">
+              <c:set var="mAdvertiseURL" value="${contextURL}/insert"/>  
+            </c:when>
+            <c:otherwise>
+              <c:set var="mAdvertiseURL" value="${contextURL}/masteraccess.jsp"/>  
+            </c:otherwise>
+          </c:choose>  
+          <span class="myBtn2Layout">
+            <a style="color:white" href="${mAdvertiseURL}">Advertise Free</a>
+          </span>&nbsp;<b>to thousands of users</b> only @ ${siteName}.com
+        </c:otherwise>
+      </c:choose>
+  </div>    
+  <div style="margin:1em 0em; width:100%">
+    <img src="${contextURL}/images/fashion.jpg" alt="Happy New Year" style="width:100%"/>  
+  </div>      
+</div>  
+<div class="spaced2"></div>        
+</c:if>

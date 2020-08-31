@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app metadata-complete="false" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <display-name>BuzzWears</display-name>
+    <description>BuzzWears.com is where you can find the best bargains for fashion and accessories.</description>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>welcome.jsp</welcome-file>
+    </welcome-file-list>
+    <context-param>
+        <param-name>productionMode</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <description>The default time zone</description>
+        <param-name>timeZone</param-name>
+        <param-value>GMT+1:00</param-value>
+    </context-param>
+    <context-param>
+        <description>Website name as will be displayed on web pages</description>
+        <param-name>siteName</param-name>
+        <param-value>BuzzWears</param-value>
+    </context-param>
+    <context-param>
+        <param-name>twitterUsername</param-name>
+        <param-value>buzzwears</param-value>
+    </context-param>
+    <context-param>
+        <description>The servlet context path to the 'quickchat' web app if available</description>
+        <param-name>quickChatContext</param-name>
+        <param-value>/chatapp</param-value>
+    </context-param>
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>com.looseboxes.web.listeners.ContextListener</listener-class>
+    </listener>
+    <listener>
+        <description>HttpSessionListener</description>
+        <listener-class>com.looseboxes.web.listeners.SessionListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>defaultMetaDescription</param-name>
+        <param-value>BuzzWears.com is where you get the best bargain for baby and kids clothing and accessories</param-value>
+    </context-param>
+    <context-param>
+        <description>used as a part of the title of most pages</description>
+        <param-name>defaultTitle</param-name>
+        <param-value>You can't get this quality of fashion cheaper elsewhere</param-value>
+    </context-param>
+    <context-param>
+        <description>Short text often displayed by logo</description>
+        <param-name>logoCaption</param-name>
+        <param-value>For Kiddies!</param-value>
+    </context-param>
+    <context-param>
+        <description>Short text describing this site</description>
+        <param-name>siteCaption</param-name>
+        <param-value>Best bargaing for kiddies!</param-value>
+    </context-param>
+    <context-param>
+        <description>The default category</description>
+        <param-name>productcategory</param-name>
+        <param-value>fashion</param-value>
+    </context-param>
+    <context-param>
+        <param-name>defaultMetaDescription1</param-name>
+        <param-value>We specialize in imported, brand new baby and kids fashion and accessories </param-value>
+    </context-param>
+    <context-param>
+        <param-name>defaultSearchText</param-name>
+        <param-value>Enter what to search for</param-value>
+    </context-param>
+    <context-param>
+        <param-name>defaultSearchTextMobile</param-name>
+        <param-value>Search here</param-value>
+    </context-param>
+    <context-param>
+        <description>Decides if turing numer will be displayed</description>
+        <param-name>hideTuring</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <session-config>
+        <!-- @related default_session_timeout 120 minutes changes must be reflected in all related -->
+        <session-timeout>
+            120
+        </session-timeout>
+    </session-config>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/errorpages/default.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>com.looseboxes.web.exceptions.LoginException</exception-type>
+        <location>/user/login.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>com.looseboxes.web.exceptions.LoginToCheckoutException</exception-type>
+        <location>/cart/loginToCheckout.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.io.FileNotFoundException</exception-type>
+        <location>/errorpages/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorpages/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>408</error-code>
+        <location>/errorpages/408.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/errorpages/500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>503</error-code>
+        <location>/errorpages/503.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/errorpages/403.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/errorpages/servleterrorpage.jsp</location>
+    </error-page>
+    <jsp-config>
+        <jsp-property-group>
+            <description>All white spaces in the specified file types will be trimmed</description>
+            <url-pattern>*.jsp</url-pattern>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>
+    <!-- CometdChat WebApp Config -->
+    <context-param>
+        <param-name>cometdChatAppName</param-name>
+        <param-value>cometdchatweb</param-value>
+    </context-param>
+    <filter>
+        <filter-name>continuation</filter-name>
+        <filter-class>org.eclipse.jetty.continuation.ContinuationFilter</filter-class>
+        <async-supported>true</async-supported>
+    </filter>
+    <filter-mapping>
+        <filter-name>continuation</filter-name>
+        <url-pattern>/cometd/*</url-pattern>
+    </filter-mapping>
+    <!-- Servlets to query messages -->
+    <servlet>
+        <servlet-name>messages</servlet-name>
+        <servlet-class>com.looseboxes.cometd.chat.servlets.Messages</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>messages</servlet-name>
+        <url-pattern>/chat/messages</url-pattern>
+    </servlet-mapping>
+    <!-- Cometd Servlet -->
+    <servlet>
+        <servlet-name>cometd</servlet-name>
+        <servlet-class>com.looseboxes.cometd.chat.servlets.CometdWithMessageConsumer</servlet-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>timeout</param-name>
+            <param-value>20000</param-value>
+        </init-param>
+        <init-param>
+            <param-name>interval</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>maxInterval</param-name>
+            <param-value>10000</param-value>
+        </init-param>
+        <init-param>
+            <param-name>maxLazyTimeout</param-name>
+            <param-value>5000</param-value>
+        </init-param>
+        <init-param>
+            <param-name>long-polling.multiSessionInterval</param-name>
+            <param-value>2000</param-value>
+        </init-param>
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>transports</param-name>
+            <param-value>org.cometd.websocket.server.WebSocketTransport</param-value>
+        </init-param>
+        <init-param>
+            <param-name>services</param-name>
+            <param-value>com.looseboxes.cometd.chat.ChatService</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cometd</servlet-name>
+        <url-pattern>/cometd/*</url-pattern>
+    </servlet-mapping>
+</web-app>

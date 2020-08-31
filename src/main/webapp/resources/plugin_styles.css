@@ -1,0 +1,31 @@
+.gradientBtn{
+    background:#5CCD00;
+    background:-moz-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#5CCD00),color-stop(100%,#4AA400));
+    background:-webkit-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+    background:-o-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+    background:-ms-linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+    background:linear-gradient(top,#5CCD00 0%,#4AA400 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5CCD00',endColorstr='#4AA400',GradientType=0);
+}
+.curvedTop{
+    -moz-border-radius:6px 6px 0 0 / 6px 6px 0 0; /** Firefox */ 
+    -webkit-border-radius:6px 6px 0 0 / 6px 6px 0 0; /** Safari and chrome */ 
+    border-radius:6px 6px 0 0 / 6px 6px 0 0; /** CSS3 */ 
+    behavior:url('../resources/PIE.htc'); /** IE */ 
+}
+.curved{
+    -moz-border-radius:6px; /** Firefox */ 
+    -webkit-border-radius:6px; /** Safari and chrome */ 
+    border-radius:6px; /** CSS3 */ 
+    behavior:url('../resources/PIE.htc'); /** IE */ 
+}
+.boxShadow {
+    -moz-box-shadow:    0px 0px 5px 3px #999;
+    -webkit-box-shadow: 0px 0px 5px 3px #999;
+    box-shadow:         0px 0px 5px 3px #999;
+    behavior:url('../resources/PIE.htc'); /** IE */ 
+    margin-bottom: 8px;
+}
+/** I had to remove this because it caused errors */
+.lowerShadow { }

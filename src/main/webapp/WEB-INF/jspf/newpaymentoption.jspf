@@ -1,0 +1,20 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:choose>
+  <c:when test="${User.paymentoptions != null && not empty User.paymentoptions}">
+    <c:set var="npoSelectPrompt" value="Select new payment method"/>
+  </c:when>
+  <c:otherwise>
+    <c:set var="npoSelectPrompt" value="Select payment method"/>
+  </c:otherwise>
+</c:choose>  
+
+<select name="paymentmethodid" size="1">
+
+  <option selected disabled>${npoSelectPrompt}</option>
+  
+  <c:forEach var="paymentType" items="${User.shoppingCart.paymentTypes}">
+    <option value="${paymentType.key}">${paymentType.value}</option>
+  </c:forEach>    
+    
+</select>    

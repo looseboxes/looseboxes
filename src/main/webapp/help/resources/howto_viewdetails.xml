@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  After searching for the required item:    
+  <ul>
+    <li>
+      <strong>Click the <tt>more</tt> link</strong> to view the item's details.
+      The <tt>more</tt> link is displayed at the bottom of the search result for 
+      each item. 
+    </li>    
+    <li><strong>Click the item's image</strong> where applicable, to view the item's details</li>    
+    <li>
+      <strong>Learn how to search for an item</strong> <a href="../help/FAQs.jsp#search">here</a>
+    </li>    
+  </ul>
+</root>

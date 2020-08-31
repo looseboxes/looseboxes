@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <p>To update shipping details, first <strong>login to ${siteName}</strong>. 
+  When you are logged - in, your <tt>profile settings</tt> will be displayed at 
+  the top right of the web page, with your username as it's title. 
+  </p>
+  <p>If your <tt>profile settings</tt> is collapsed, a <tt>+</tt> button will be 
+  displayed. If collapsed, <strong>expand your profile setting</strong> using the 
+  <tt>+</tt> button. 
+  </p>
+  <p>Under your profile settings <strong>click on the <tt>my orders</tt> link</strong>.
+    This will enable you view both the orders you made for other sellers items 
+    and those made by other buyers for your items.
+  </p>
+  <p>In the <tt>orders</tt> table under the <tt>actions</tt> column 
+  <strong>click on the <tt>update shipping</tt> link</strong>.
+  </p>
+</root>
+
+

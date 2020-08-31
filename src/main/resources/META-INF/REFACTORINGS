@@ -1,0 +1,23 @@
+change all www.looseboxes.com to appropriate baseUrl
+
+Change most .image to .src
+Replace all com.loosebox. with the necessary com.looseboxes.web.. etc
+change all .formFields to FormBean.fieldNames
+change all .nullable to .optional
+${contextURL}/user/join.jsp
+${contextURL}/user/login.jsp
+${contextURL}/gx?rh=tosendmail&mt=notification&amp;ids=${ssProductId}
+${contextURL}/ux?rh=edit&id=${ssProductId}
+${contextURL}/ux?rh=delete&id=${ssProductId}
+${contextURL}/user/quickeditproduct.jsp?productId=${ssProductId}
+${contextURL}/ux?rh=logout
+${contextURL}/ux?rh=viewimg&cat=${productcategory}&id=${User.selectedItem.productId}&productimageid=${image.key}
+${contextURL}/gx?rh=contactux&amp;t=${messageType}
+${contextURL}/ux?rh=chat&amp;ax=load
+
+Replace all 
+${contextURL}/search.jsp with ${contextURL}/products/searchresults.jsp
+User.image1 with User.image
+User.emailAddress with User.details.emailAddress
+User.name with User.details.username
+User.tableName with User.details.record.productcategoryid.productcategory

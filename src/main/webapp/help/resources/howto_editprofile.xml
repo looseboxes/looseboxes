@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <ul>
+  <li><strong>Sign in to ${siteName}</strong></li>  
+  <li><strong>Expand the user profile settings</strong>(if collapsed). The user
+    profile settings are marked with the user name. If you have not specified a
+    user name one would have been generated (format = user_xxxxxx). The user 
+    profile settings is often found at the top right of ${siteName} web pages
+  </li>
+  <li><strong>Collpased settings</strong> display the <tt>+</tt> sign at the 
+  top right, while <strong>expanded settings</strong> display the <tt>-</tt>
+  </li>
+  <li><strong>Click the <tt>edit profile</tt> link</strong> under the expanded
+  user profile settings.
+  </li>
+  <li><strong>For convenience: </strong>
+    <br/><a href="../editux">Click here</a> to edit profile. 
+    <br/><a href="../user/uploadProfilePicture.jsp">Click here</a> to edit profile picture.   
+  </li>
+  </ul>  
+</root>

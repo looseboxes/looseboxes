@@ -1,0 +1,17 @@
+<div id="mapview">
+<div id="messagenode" class="myBorder fullWidth myFontSize0">...loading</div>
+<div class="myFontSize0 spaced2">
+   Latitude: <input type="text" id="latitudeId" name="latitude" size="12" maxlength="12" value="${User.selectedItem.latitude}"/>
+  Longitude: <input type="text" id="longitudeId" name="longitude" size="12" maxlength="12" value="${User.selectedItem.longitude}"/>
+  <input class="myBtnLayout" type="button" id="loadmap" value="Load" onclick="googlemap.load"/>
+</div>
+<div id="addressnode" class="myBorder curvedTop fullWidth myFontSize0">
+  ${User.selectedItem.address}    
+</div>    
+<div id="map_canvas" class="myBorder fullWidth">  
+</div>    
+<p class="myFontSize0">
+  If the location is remote, map canvass may be blank due to lack of details<br/>  
+  Click the satellite button, and wait a few seconds to load satellite details. 
+</p>
+</div>

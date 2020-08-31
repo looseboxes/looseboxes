@@ -1,0 +1,48 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<jsp:useBean id="Delivery" class="com.looseboxes.web.components.Delivery" scope="page"/>
+
+<jsp:useBean id="DeliveryGroup" class="com.looseboxes.web.components.DeliveryGroup" scope="page"/>
+<b>Speedpost</b>
+<table class="table0">
+  <thead>
+    <tr>
+      <th>City</th>      
+      <th>Price/Kg</th>      
+      <th>Duration</th>      
+    </tr>      
+  </thead>
+  <tbody>
+    <c:forEach var="pair" items="${Delivery.deliveryGroups}">
+    <jsp:setProperty name="DeliveryGroup" property="group" value="${pair.key}"/>    
+    <c:set var="mRate" value="${DeliveryGroup.expressDeliveryRate}"/>
+    <tr>
+      <td>${DeliveryGroup.deliveryLocation}</td>        
+      <td>${mRate + (mRate * Delivery.vatRate/100) + Delivery.fee}</td>        
+      <td>${DeliveryGroup.expressDeliveryPeriod}</td>        
+    </tr>      
+    </c:forEach>    
+  </tbody>
+</table>  
+<br/>
+<b>Normal</b>
+<table class="table0">
+  <thead>
+    <tr>
+      <th>City</th>      
+      <th>Price/Kg</th>      
+      <th>Duration</th>      
+    </tr>      
+  </thead>
+  <tbody>
+    <c:forEach var="pair" items="${Delivery.deliveryGroups}">
+    <jsp:setProperty name="DeliveryGroup" property="group" value="${pair.key}"/>    
+    <c:set var="mRate" value="${DeliveryGroup.deliveryRate}"/>
+    <tr>
+      <td>${DeliveryGroup.deliveryLocation}</td>        
+      <td>${mRate + (mRate * Delivery.vatRate/100) + Delivery.fee}</td>        
+      <td>${DeliveryGroup.deliveryPeriod}</td>        
+    </tr>      
+    </c:forEach>    
+  </tbody>
+</table>  

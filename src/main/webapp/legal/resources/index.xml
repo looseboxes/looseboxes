@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div class="listView0">
+    <b><a href="${contextURL}/legal/index.jsp">Legal Notices</a></b><br/>
+    <ul>
+      <li><a href="${contextURL}/legal/user_agreement.jsp">User Agreement</a></li>
+      <li><a href="${contextURL}/legal/privacy_policy.jsp">Privacy Policy</a></li>
+      <li><a href="${contextURL}/legal/returnpolicy.jsp">Return Policy</a></li>
+      <li><a href="${contextURL}/legal/submitcomplain.jsp">Complaints Center</a></li>
+      <li><a href="${contextURL}/legal/emailDisclaimer.jsp">Email Disclaimer and Confidentiality Note</a></li>
+      <li><a href="${contextURL}/legal/promos_terms.jsp"><i>${siteName}</i> Promos - Terms and Conditions</a></li>
+      <li><a target="_blank" href="${contextURL}/legal/licenses/software.html"><i>${siteName}</i> Software License</a></li>
+    </ul>
+  </div>
+</root>

@@ -1,0 +1,385 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="/WEB-INF/tlds/looseboxes" prefix="loose"%>
+
+<fmt:setLocale value="${User.locale}" scope="request"/>
+
+<c:choose>
+  <c:when test="${orderId == null}">
+<%-- This implies that we are to work with the current User's shopping cart --%> 
+    <c:set var="ShoppingCart" value="${User.shoppingCart}"/>      
+  </c:when>    
+  <c:otherwise>
+    <jsp:useBean id="SelectedShoppingCart" class="com.looseboxes.web.components.ShoppingCart" scope="request">    
+      <jsp:setProperty name="SelectedShoppingCart" property="syncWithDatabase" value="true"/>  
+      <jsp:setProperty name="SelectedShoppingCart" property="orderId" value="${orderId}"/>  
+    </jsp:useBean>    
+    <c:set var="ShoppingCart" value="${SelectedShoppingCart}"/>      
+  </c:otherwise>
+</c:choose>
+
+<div class="myFontSize0">
+
+    <c:if test="${orderId == null}">
+      <c:choose>
+        <c:when test="${!mobile}">
+          <span class="layout1 myFontSize2 maxFontWeight">Thanks</span>
+          &emsp;for this Order No:<b> ${User.shoppingCart.orderId}</b>
+        </c:when>
+        <c:otherwise>
+          <span class="layout1 myFontSize1b">Order No: <b> ${User.shoppingCart.orderId}</b></span>
+        </c:otherwise>
+      </c:choose>
+    </c:if>
+    
+    <c:if test="${empty ShoppingCart.items}">
+      <p class="handWriting">
+        There are currently no items in your shopping cart.
+        <br/><br/>
+        Use the <tt>Add to Cart</tt> or <tt>Buy Now</tt> buttons to add items 
+        to your Shopping Cart.
+      </p>
+    </c:if>      
+
+    <c:set var="scTotal" value="0"/>    
+
+    <jsp:useBean id="ConvCurr" class="com.looseboxes.web.servlets.Convcurr" scope="page"/>                    
+
+    <c:if test="${orderId == null}">
+    <%-- This implies that we are to work with the current User's shopping cart --%> 
+    <form class="form0" method="post" action="${contextURL}/checkout">
+    </c:if>
+
+    <c:set var="userCurrency" value="${User.details.currencyid.currency}"/>    
+
+    <table id="cartitems" class="myBorder">
+
+    <%-- Head section of the order items details table --%>    
+      <thead class="spaced background0">
+        <tr style="height:2em;">
+          <c:choose>
+            <c:when test="${mobile}">
+              <th>Item</th>
+              <th>Details</th>
+              <th>Amount <span class="mySmaller">(${userCurrency})</span></th>
+            </c:when>      
+            <c:otherwise>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Description</th>     
+              <th>Unit Price</th>    
+              <th>Qty</th>
+              <th>Amount&nbsp;<span class="mySmaller">(${userCurrency})</span></th>
+              <th>
+                <c:if test="${orderId == null}">
+                <a class="mySmaller" href="${contextURL}/cart?action=clear">clear</a>
+                </c:if>
+              </th>  
+            </c:otherwise>
+          </c:choose>  
+        </tr>      
+      </thead>  
+
+    <%-- Body section of the order items details table --%>    
+
+      <tbody>
+
+        <jsp:useBean id="scProductBean" class="com.looseboxes.web.components.ProductBean">
+          <jsp:setProperty name="scProductBean" property="user" value="${User}"/>
+        </jsp:useBean>    
+
+        <c:forEach var="Orderproduct" items="${ShoppingCart.items}">    
+
+          <jsp:useBean id="Orderproduct" class="com.looseboxes.pu.entities.Orderproduct" scope="request"/>  
+
+          <jsp:setProperty name="scProductBean" property="selectedVariant" value="${Orderproduct.productvariantid}"/>
+
+          <jsp:setProperty name="ConvCurr" property="fromCode" value="${Orderproduct.currencyid.currency}"/>        
+          <jsp:setProperty name="ConvCurr" property="toCode" value="${User.details.currencyid.currency}"/>        
+
+          <c:choose>
+            <c:when test="${ConvCurr.rate == 0 || ConvCurr.rate == 1}">
+              <c:set var="scPrice" value="${Orderproduct.price}"/>      
+            </c:when>      
+            <c:otherwise>
+              <c:set var="scPrice" value="${Orderproduct.price * ConvCurr.rate}"/>        
+            </c:otherwise>
+          </c:choose>
+          <c:choose>
+            <c:when test="${ConvCurr.rate == 0 || ConvCurr.rate == 1}">
+              <c:set var="scDiscount" value="${Orderproduct.discount}"/>      
+            </c:when>      
+            <c:otherwise>
+              <c:set var="scDiscount" value="${Orderproduct.discount * ConvCurr.rate}"/>        
+            </c:otherwise>
+          </c:choose>
+          <c:set var="scQuantity" value="${Orderproduct.quantity}"/>  
+
+          <c:set var="scSubTotal" value="${(scPrice - scDiscount)*scQuantity}"/>
+          <c:set var="scTotal" value="${scTotal + scSubTotal}"/>
+
+          <loose:selectproductimage spiIncludeLogo="true" spiProduct="${Orderproduct.productvariantid.productid}"/>
+          <c:set var="scProductImage" value="${selectedImage}"/>          
+
+          <c:set var="scProductHasImage" value="${scProductImage != null && scProductImage != ''}"/>
+
+    <%-- Rows of the body section of the order items details table --%>    
+          <tr style="height:2em;" class="spaced background0">
+            <c:choose>
+              <c:when test="${mobile}">
+                <td class="centeredContent">
+                  <b>ID</b>:${Orderproduct.productvariantid.productid.productid}<br/><b>SKU</b>:${Orderproduct.productvariantid.productvariantid}
+                  <c:if test="${scProductHasImage}">
+                    <br/>
+                    <loose:getimagesrc imagePath="${scProductImage}"/>  
+
+                    <img id="image${Orderproduct.productvariantid.productid.productid}" 
+                       itemprop="image" class="smallicon" 
+                       src="${getimagesrc_imageSrc}" 
+                       alt="${Orderproduct.productvariantid.productid.productName}" 
+                       title="${Orderproduct.productvariantid.productid.productName}"/> 
+                  </c:if>      
+                </td> 
+                <td>
+                  <c:if test="${Orderproduct.productvariantid.productid.productName != null}">
+                    <a href="${contextURL}/products/${Orderproduct.productvariantid.productid.productid}.jsp">
+                      ${Orderproduct.productvariantid.productid.productName}  
+                    </a><br/>    
+                  </c:if> 
+                  <b>Each:</b> ${scPrice-scDiscount}
+                  <br/>
+                  <b>Qty:</b> ${scQuantity}
+                  <br/>
+                  <c:if test="${orderId == null}">
+                    <c:if test="${scProductBean.available > 0}">
+                      <a title="Add more of this" href="${contextURL}/cart?action=add&vid=${Orderproduct.productvariantid.productvariantid}">
+                        <span style="font-size:3em; font-weight:900; color:green;">+</span>
+                      </a>
+                      &emsp;
+                    </c:if>  
+                    <a title="Remove" href="${contextURL}/cart?action=remove&vid=${Orderproduct.productvariantid.productvariantid}">
+                      <span style="font-size:3em; font-weight:900; color:red;">-</span>
+                    </a>
+                  </c:if>
+                  </td>    
+                  <td class="centeredContent">
+                    ${scSubTotal}    
+                  </td>
+                </c:when>  
+                <c:otherwise>
+                  <td class="centeredContent">
+                    <b>ID</b>:${Orderproduct.productvariantid.productid.productid}<br/><b>SKU</b>:${Orderproduct.productvariantid.productvariantid}
+                  </td>
+                  <td class="centeredContent">
+                    <c:if test="${scProductHasImage}">
+                      <loose:getimagesrc imagePath="${scProductImage}"/>  
+
+                      <img id="image${Orderproduct.productvariantid.productid.productid}" 
+                         itemprop="image" class="icon borderless" 
+                         src="${getimagesrc_imageSrc}" 
+                         alt="${Orderproduct.productvariantid.productid.productName}" 
+                         title="${Orderproduct.productvariantid.productid.productName}"/> 
+                    </c:if>      
+                  </td>
+                  <td class="centeredContent mySmaller">
+                    <c:if test="${Orderproduct.productvariantid.productid.productName != null}">
+                      <a href="${contextURL}/products/${Orderproduct.productvariantid.productid.productid}.jsp">
+                        ${Orderproduct.productvariantid.productid.productName}  
+                      </a><br/>    
+                    </c:if>    
+                  </td>
+                  <td class="centeredContent">
+                    <fmt:formatNumber maxFractionDigits="2" value="${scPrice-scDiscount}" type="number"/>
+                  </td>
+                  <td class="centeredContent">${scQuantity}</td>
+                  <td class="centeredContent">
+                    <fmt:formatNumber maxFractionDigits="2" value="${scSubTotal}" type="number"/>
+                  </td>
+                  <td class="centeredContent">
+                    <c:if test="${orderId == null}">
+                      <c:if test="${scProductBean.available > 0}">
+                        <a title="Add more of this" href="${contextURL}/cart?action=add&vid=${Orderproduct.productvariantid.productvariantid}">
+                          <span style="font-size:2em; font-weight:900; color:green;">+</span>
+                        </a>&emsp;    
+                      </c:if>    
+                      <a title="Remove" href="${contextURL}/cart?action=remove&vid=${Orderproduct.productvariantid.productvariantid}">
+                        <span style="font-size:2em; font-weight:900; color:red;">-</span>
+                      </a>
+                    </c:if>
+                  </td>
+                </c:otherwise>
+              </c:choose>  
+            </tr>     
+          </c:forEach>     
+
+        <c:choose>
+          <c:when test="${mobile}">
+            <c:set var="col0span" value="1"/>      
+            <c:set var="col1span" value="1"/>      
+            <c:set var="col2span" value="1"/>  
+            <c:set var="colspanTotal" value="3"/>
+          </c:when>   
+          <c:otherwise>
+            <c:set var="col0span" value="1"/>      
+            <c:set var="col1span" value="4"/>      
+            <c:set var="col2span" value="2"/>      
+            <c:set var="colspanTotal" value="7"/>
+          </c:otherwise>
+        </c:choose>    
+
+    <%-- Delivery amount --%>    
+
+        <tr style="height:2em;">
+          <td colspan="${col0span}"><b>Sub Total</b></td>
+          <td colspan="${col1span}"></td>
+          <td colspan="${col2span}" class="centeredContent">
+            <fmt:formatNumber maxFractionDigits="2" value="${scTotal}" type="number"/>  
+          </td>
+        </tr>  
+        <c:if test="${ShoppingCart.deliveryAmount > 0}">
+        <tr style="height:2em;" class="mySmaller">
+          <td colspan="${col0span}">Delivery</td>
+          <td colspan="${col1span}">(${ShoppingCart.totalWeight} kg)</td>
+          <td colspan="${col2span}" class="centeredContent">
+            <fmt:formatNumber maxFractionDigits="2" value="${ShoppingCart.deliveryAmount}" type="number"/>  
+          </td>
+        </tr>  
+        <tr style="height:2em; font-size:0.75em;" class="mySmaller">
+          <td colspan="${col0span}">
+            <a href="${contextURL}/cart/deliveryrates.jsp">
+                <c:choose><c:when test="${mobile}">Delivery rates</c:when><c:otherwise>View delivery rates</c:otherwise></c:choose>
+            </a>
+          </td>
+          <td colspan="${col1span}"></td>
+          <td colspan="${col2span}" class="centeredContent"></td>
+        </tr>  
+        </c:if>
+
+    <%-- Total --%>    
+
+        <tr style="height:2em; background-color:#4BBC99; color:white;">
+          <td colspan="${col0span}"><b>Total</b></td>
+          <td colspan="${col1span}"></td>
+          <td colspan="${col2span}" class="centeredContent">
+            <b><fmt:formatNumber maxFractionDigits="2" currencyCode="${User.currency.currencyCode}" value="${scTotal + ShoppingCart.deliveryAmount}" type="currency"/></b>  
+          </td>
+        </tr>  
+        <c:if test="${orderId == null}">
+
+          <c:if test="${ShoppingCart.freeShipping}">
+            <tr style="height:2em;">
+              <td colspan="${col0span}"></td>  
+              <td colspan="${col1span}" class="centeredContent">
+    <%-- @related_52 --%>  
+                OR pay ${User.shoppingCart.initialPaymentPercent}% now 
+                <c:if test="${!mobile}"> the rest on delivery.</c:if>
+                <input type="checkbox" name="initialPaymentSelected" value="true"/> 
+              </td>
+              <td colspan="${col2span}" class="centeredContent">
+                <fmt:formatNumber maxFractionDigits="2" value="${User.shoppingCart.initialPaymentAmount}" type="number"/>  
+              </td>
+            </tr>    
+          </c:if>
+          <c:choose>
+            <c:when test="${mobile}">
+            <tr style="height:2em;">
+              <td colspan="${colspanTotal}">
+                <%@include file="/WEB-INF/jspf/paymentoptions.jspf"%>  
+              </td>  
+            </tr>
+            <tr style="height:2em;">
+              <td colspan="${colspanTotal}">
+                <%@include file="/WEB-INF/jspf/shoppingcartsubmitbutton.jspf"%>  
+              </td>  
+            </tr>    
+            </c:when>    
+            <c:otherwise>
+            <tr style="height:2em;">
+              <td colspan="${colspanTotal}">
+
+                <p class="tone0 myFontSize0">
+                Pay instantly by Mobile Banking (<small>recommended</small>).
+                <br/>
+                Dial <span style="color:orangered">*737*1*Amount*0025295097#</span> from the 
+                phone number you registered with <b>GTBank</b>
+                </p>
+                <b>Select a payment method before proceeding</b>
+              </td>
+            </tr>
+            <tr style="height:2em;">
+              <td colspan="${colspanTotal - 2}" class="background0">
+                <%@include file="/WEB-INF/jspf/paymentoptions.jspf"%>  
+              </td>
+              <td class="floatRight">
+                <br/><br/> 
+                <%@include file="/WEB-INF/jspf/shoppingcartsubmitbutton.jspf"%>  
+              </td>
+              <td></td>
+            </tr>    
+            </c:otherwise>
+          </c:choose>    
+
+        </c:if>
+      </tbody>
+      <c:if test="${orderId == null}">
+      <tfoot>
+        <tr style="height:2em;">
+          <td colspan="${colspanTotal}">
+            <c:if test="${!mobile}">
+              <hr class="myBorder"/><br/>
+    <%-- This image is too long for certain mobile screens --%>          
+              <img class="paymentGatewayImg" alt="supported payment gateways"
+              src="${contextURL}/images/transparent.gif"/>    
+              <br/>
+            </c:if>  
+            <c:set var="addressFormHeading" value="Enter delivery address below"/>
+            <c:if test="${!ShoppingCart.shippingDetailsNeeded}">
+              <br/>  
+              <c:set var="addressFormHeading" 
+              value="Fill the form below to use a different delivery address"/>  
+              <div><tt>Available delivery address</tt></div>  
+              <c:set var="scAddress" value="${ShoppingCart.orderShipping.deliveryAddress}"/>
+              <jsp:useBean id="scAddress" class="com.looseboxes.pu.entities.Address" scope="page"/>
+              <table class="mySmaller background0 spaced">
+                <tr><td><b>Country</b></td><td>${scAddress.countryid.country}</td></tr>
+                <tr><td><b>State/Region</b></td><td>${scAddress.regionid.region}</td></tr>
+                <tr><td><b>City</b></td><td>${scAddress.city}</td></tr>
+                <tr><td><b>Country</b></td><td>${scAddress.county}</td></tr>
+                <tr><td><b>Street Address</b></td><td>${scAddress.streetAddress}</td></tr>
+              </table>
+              <%@include file="/WEB-INF/jspf/shoppingcartsubmitbutton.jspf"%>  
+            </c:if>    
+          </td>    
+        </tr>
+      </tfoot>
+      </c:if>
+    </table>
+    <c:if test="${orderId == null}">
+    </form>   
+    <c:if test="${ShoppingCart.delivery.deliveryPeriod != null}">
+      <br/>
+      <form class="form0" method="post" action="${contextURL}/ted">
+        <b>Delivery: ${ShoppingCart.delivery.deliveryPeriod} day(s)</b>&nbsp;  
+        <input type="submit" value="${ShoppingCart.delivery.express ? 'I dont want express shipping' : 'I want express shipping'}"/>    
+      </form>  
+    </c:if>  
+    <br/> 
+    <div><b>${addressFormHeading}</b></div>  
+    <form class="form0 background0" method="post" action="${contextURL}/addshipping?orderId=${ShoppingCart.orderId}">
+      <%@include file="/WEB-INF/jspf/insertshippingforcart.jspf"%> 
+      <%-- @related express shipping --%>
+      Express Shipping: <input type="checkbox" name="expressShipping" value="true"/>&nbsp;
+      <input type="submit" class="myBtnLayout" value="Use this address"/>
+    </form>
+    <hr class="myBorder"/> 
+    <div><a class="mySmaller" target="_blank" href="${contextURL}/currencyconverter.jsp">currency converter</a></div>
+    </c:if>
+    <c:if test="${User.admin}">
+      Total weight: ${ShoppingCart.totalWeight}<br/>
+      Delivery amount: ${ShoppingCart.deliveryAmount}<br/>
+      Shipping needed: ${ShoppingCart.shippingDetailsNeeded}<br/>
+      Express delivery: ${ShoppingCart.expressDelivery}<br/>
+      Free shipping: ${ShoppingCart.freeShipping}
+    </c:if>    
+</div>

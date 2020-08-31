@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <div itemscope itemtype="http://schema.org/Organization">
+    <strong itemprop="name">NUROX Ltd</strong>
+    <br/><br/>
+    <strong>Email:</strong><br/>
+    <a itemprop="email" href="mailto:nuroxltd@yahoo.com">nuroxltd@yahoo.com</a>
+    <br/><br/>
+    <strong>Phone:</strong><br/>
+    <span itemprop="telephone">+234 80 9292 5690</span> 
+    <br/><br/>
+    <strong>Local Address:</strong>
+    <div itemscope itemtype="http://schema.org/PostalAddress"> 
+      <span itemprop="name">Nurox Ltd</span>&nbsp; 
+      <span itemprop="postalCode">900231</span>&nbsp; 
+      <span itemprop="addressRegion">Abuja</span>&nbsp; 
+      <span itemprop="addressCountry">Nigeria</span>
+    </div> 
+    <br/><br/>
+    <span itemprop="subOrganization" itemscope itemtype="http://schema.org/Organization">
+      <span itemprop="name">${siteName}.com</span>
+    </span> is a subsidiary of <span>NUROX Ltd</span>
+  </div>  
+</root>

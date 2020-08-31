@@ -1,0 +1,40 @@
+  <div class="${headingClass}">Quick Links</div>  
+  &nbsp;&nbsp;<a class="${listItemClass}" href="${contextURL}/search?searchText=girls+dress">Girls Dresses</a>  
+  <table cellspacing="5" class="spaced2">
+    <thead>
+      <tr><th colspan="2"><a class="${listItemClass}" href="${contextURL}/search?searchText=baby">Baby</a></th></tr>
+    </thead>  
+    <tbody>
+      <tr>
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=6+month">6 months</a></td>    
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=1+year">1 year</a></td>
+      </tr>
+      <tr>
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=18+month">18 months</a></td>    
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=2+year">2 years</a></td>
+      </tr>
+      <tr>
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=3+year">3 years</a></td>    
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=4+year">4 years</a></td>
+      </tr>
+    </tbody>  
+  </table>
+  <table cellspacing="5" class="spaced2">
+    <thead>
+      <tr><th colspan="2"><a class="${listItemClass}" href="${contextURL}/search?searchText=kid">Kids</a></th></tr>
+    </thead>  
+    <tbody>
+      <tr>
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=5+year">5 years</a></td>    
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=6+year">6 years</a></td>
+      </tr>
+      <tr>
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=7+year">7 years</a></td>    
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=8+year">8 years</a></td>
+      </tr>
+      <tr>
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=9+year">9 years</a></td>    
+        <td><a class="${listItemClass}" href="${contextURL}/search?searchText=10+year">10 years</a></td>
+      </tr>
+    </tbody>  
+  </table>
