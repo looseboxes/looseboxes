@@ -48,6 +48,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import com.bc.jpa.context.JpaContext;
+import com.looseboxes.JpaInfo;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.function.Function;
@@ -144,7 +145,7 @@ public class ATempUploader {
         panel.add(imageLabel, BorderLayout.CENTER);
 // Check File.getName(), Create Buzzwears profile on local        
         discountFactor = 0.5f;
-        URI uri = new URI("file:/C:/Users/Josh/Documents/NetBeansProjects/looseboxespu/src/test/resources/META-INF/persistence.xml");
+        URI uri = new URI(JpaInfo.CONFIG_LOCATION);
         jpaContext = new LbJpaContext(uri);
         refs = jpaContext.getEnumReferences();
         availability = (Availability)refs.getEntity(References.availability.InStock);

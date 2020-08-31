@@ -1,5 +1,7 @@
 package aaa.util;
 
+import com.bc.imageutil.DrawConfig;
+import com.bc.imageutil.DrawConfigs;
 import com.bc.imageutil.ImageDimensions;
 import com.bc.imageutil.ImageManager;
 import com.bc.imageutil.impl.ImageManagerImpl;
@@ -31,6 +33,8 @@ import java.util.Map;
 import com.bc.jpa.context.JpaContext;
 import java.net.URISyntaxException;
 import com.bc.jpa.dao.Select;
+import com.looseboxes.JpaInfo;
+import java.awt.Color;
 
 
 /**
@@ -103,32 +107,15 @@ log("Extracted "+data.size()+" lines of data");
             return;
         }
         
-        final ImageOverlay imageOverlay = new OverlayImageWithText() {
-            @Override
-            public int [] getDrawOffset(BufferedImage image, Rectangle2D rec) {
-                float wf = 0.9f;
-                float hf = 0.06f;
-System.out.println("Image: ["+image.getWidth()+":"+image.getHeight()+"]");        
-System.out.println("Rectangle: ["+rec.getWidth()+":"+rec.getHeight()+"]");        
-//                int x = divide(image.getWidth() - rec.getWidth(), 2).intValue();
-//                int y = divide(image.getHeight() - rec.getHeight(), 2).intValue();
-                double x_edge = this.getXOffset(image.getWidth(), rec.getWidth() * wf);
-                double y_edge = this.getYOffset(image.getHeight(), rec.getHeight() * hf);
-System.out.println("X edge: "+x_edge+", Y edge:"+y_edge);        
-                double x = image.getWidth() - (x_edge + rec.getWidth() * wf);
-                double y = image.getHeight() - (y_edge + rec.getHeight() * hf);
-System.out.println("X: "+x+", Y:"+y);                        
-                return new int[]{(int)x, (int)y};
-            }
-            @Override
-            public Font getSuggestedFont(BufferedImage image, String stringToDraw) {
-//                double factor = stringToDraw.length() * 0.66;
-                double factor = stringToDraw.length() * 1;
-                int fontSize = divide(image.getWidth(), factor).intValue();
-                Font font = new Font(Font.SERIF, Font.BOLD, fontSize);
-                return font;
-            }
-        };
+                // @TODO make these properties
+        final Font font = Font.decode(Font.MONOSPACED+"-PLAIN-24");
+        final Color color = Color.DARK_GRAY;
+        float fromBottom = 0f;
+        float fromRight = 0.05f; 
+        
+        final DrawConfig drawConfig = DrawConfigs.fromBottomRight(fromBottom, fromRight, font, color);
+
+        final ImageOverlay imageOverlay = new OverlayImageWithText();
         
         final ImageManager imgMgr = new ImageManagerImpl(
                 (sibling) -> tgtPath.resolve(sibling).toString(), imageOverlay){
@@ -224,7 +211,7 @@ log("Image saved: "+saved+", to file: "+saveTo);
     
     private void createDataFileFromProductIds(Integer [] productids) throws URISyntaxException, IOException {
         
-        LbApp.getInstance().init("file:/C:/Users/Josh/Documents/NetBeansProjects/looseboxespu/src/test/resources/META-INF/persistence.xml");
+        LbApp.getInstance().init(JpaInfo.CONFIG_LOCATION);
         
         JpaContext jpaContext = LbApp.getInstance().getJpaContext();
         

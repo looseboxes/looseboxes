@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import com.bc.jpa.context.JpaContext;
+import com.looseboxes.JpaInfo;
 import java.net.URI;
 
 /**
@@ -38,7 +39,7 @@ public class SellerOrdersTest {
     public void testAll() throws Exception {
         
 log("testAll");
-        URI uri = new URI("file:/C:/Users/Josh/Documents/NetBeansProjects/looseboxespu/src/test/resources/META-INF/persistence.xml");
+        URI uri = new URI(JpaInfo.CONFIG_LOCATION);
         final JpaContext jpaContext = new LbJpaContext(uri);
         UserOrders userOrdersBean = new UserOrders(){
             @Override

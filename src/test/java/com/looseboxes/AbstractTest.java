@@ -52,7 +52,7 @@ public abstract class AbstractTest {
     
     static{
         try{
-            LbApp.getInstance().init("file:/C:/Users/Josh/Documents/NetBeansProjects/looseboxespu/src/test/resources/META-INF/persistence.xml");
+            LbApp.getInstance().init(JpaInfo.CONFIG_LOCATION);
         }catch(IOException | URISyntaxException e) {
             throw new ExceptionInInitializerError(e);
         }
